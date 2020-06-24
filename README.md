@@ -1,65 +1,62 @@
 # The Burn-to-Claim cross-Blockchain asset transfer protocols
-The Burn-to-Claim project aim to address cross-Blockchain asset transfer. We define it as a protocol which consists of two components: an exitTransaction to generate a selfverifiable proof that the transaction is committed in the source
-network and an entryTransaction to verify the validity of the proof in order to re-create the asset in the destination
-network.
+Burn-to-claim is an open protocol developed by Griffith researchers that aims to address cross-blockchain asset transfer between networks of blockchain in a decentralised manner. The design is to transfer assets from one blockchain network to another in a way that it is being burned (destroyed) from one blockchain network and re-created on the other blockchain network. This protocol has two components: an exit transaction to generate a self-verifiable transfer-proof that the asset is burned on the source network and an entry transaction to verify the validity of transfer-proof and to re-create the asset in the destination network.
 
-## exitTransaction
+## exitTransaction()
 
-The exit-transaction must be initiated on the source network by the sender. This execution checks the validity of the transaction and generates a transfer-proof.
+The exit-transaction is in the source chain and initiated by the sender. This execution verify the transaction then generates a conditional time-locked and publicly verifiable transfer-proof. We define this transfer-proof to be a committed cross-chain transaction. The conditional timelock means that the transaction output is time-locked in the source network while the transaction is in transit.
 
-### SourceChain.sol 
+- Check the transaction-validity - checks the authenticity of the asset and the owner's ability to spend.
+- Generate the transfer-proof - a proof that the asset exists and transfered burned to a burn address 
+- TimeLock transaction output is locked while the asset is in transit.
+- The screat key
 
-We defin the sourceChain.sol in the source netwetork.
+## entryTrasnaction()
 
-check the transaction-validity - checks the authenticity of the asset and the owner's ability to spend.
-generate the transfer-proof - a proof that the asset exists and it is locked while the asset is in transit.
+The entry-transaction is in the destination chain and initiated by the recipient. Upon presenting the transfer-proof, the destination network nodes verify the validity and correctness of the transfer-proof and execute the exchange. We assume that the recipient’s network nodes can validate the transfer-proof through an intermediary middleware mechanism.
 
-This transaction aims to create an exit proof for that asset in the source blockchain network. 
+### Overview of the Included Smart Contracts in this project
 
-## entryTrasnaction
+<li><code>SourceChain.sol</code> is the main contract of in the source chain.</li>
+<li><code>DestinationChain.sol</code> is the main contract of in the destination chain.</li>
+<li><code>ERC20.sol</code> is an interface of the ERC20 standard for Ethereum tokens.</li>
 
 
-
-Our cross-chain protocol has three stages: prepare, commit and execute.
-1. At the prepare stage, the users agree and establish the transfer parameters. We assume this process occurs out-of-band through a secure channel.
-- the screat key
-
-2. At the commit stage, the source network generates a conditional time-locked and publicly verifiable transfer-proof. We define this transfer-proof to be a committed cross-chain transaction. The conditional time-lock means that the transaction output is time-locked in the source network while the transaction is in transit.
-
-3. Finally, at the execute stage, upon presenting the transfer-proof, the destination network nodes verify the validity and correctness of the transfer-proof and execute the exchange. We assume that the recipient's network nodes can validate the transfer-proof through an intermediary middleware mechanism. The recipient can claim the transaction if it is within the conditional time-bound and the transfer-proof has been validated. In case of an unsuccessful transaction, after the expiry of time-bound, the sender is able to reclaim the asset.
-
-# Token Contract
+### Token Contract.sol
 This is typical ERC20 token contract. 
 The token contract will transfer ERC20 token to the Source chain contract during the deployment.
-we will be suing the transfer function from token contract to transfer token berween accounts.
+we will be using the transfer functions from token contract to transfer token berween accounts.
 
 # SourceChain Contract
 
-# Destination Chian Contract
+# A high level overview of the Burn-to-Claim protocol workflow
 
+<img scr="./images/cross-chain_Protocol_workflow.png">
 
-## Installation
+## ontations used
+<img src="./images/notations.png">
 
-### Prerequisites
+# Installation
+
+# Prerequisites
 You need to install the following tools/packages:
 
 * [Node](https://nodejs.org/en/)
 * [Ganache](https://www.trufflesuite.com/ganache) 
-* [Tuffle] (https://www.trufflesuite.com) 
+* [Tuffle](https://www.trufflesuite.com) 
 
-### Deployment
+# Deployment
 1. Clone the repository: `git clone ---urls---`
 2. Install all dependencies: `npm install`
-3. Start Ganache: `Ganache-cli
-3. Deploy contracts: `truffle migrate
-4. Run the test: `truffle test
+3. Start Ganache: `Ganache-cli`
+3. Deploy the contracts: `truffle migrate`
+4. Run the tests: `truffle test`
 
 
 git remote add origin https://github.com/b-pillai/burn-to-claim.git
 git push -u origin master
 
 
-## Testing
+# Testing
 Test 1 - Contract deployed
 Token contract
 Source chain
