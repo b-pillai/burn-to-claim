@@ -30,8 +30,7 @@ we will be using the transfer functions from token contract to transfer token be
 
 ## A high level overview of the Burn-to-Claim protocol workflow
 
-<img scr="./images/protocol_workflow.png">
-
+![](/images/burn-to-claim_protocol_message_sequence_chart.png?raw=true)
 ## Notations used
 <img src="./images/notations.png">
 
@@ -64,3 +63,13 @@ Destination chain
 
 Test 2 - contract balance
 Source chian has the balance
+
+# To-do list on this project
+
+## time lock
+
+We need a timelock for Ether ETH tokens
+
+It requires some features that should be implemented to the contract
+- Should be able to lock tokens, defined by the senter and period of time.
+- Locked tokens should be able to be transferred by the senter during the lock time period.
