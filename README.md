@@ -28,11 +28,11 @@ we will be using the transfer functions from token contract to transfer token be
 
 # SourceChain Contract
 
-# A high level overview of the Burn-to-Claim protocol workflow
+## A high level overview of the Burn-to-Claim protocol workflow
 
-<img scr="./images/cross-chain_Protocol_workflow.png">
+<img scr="./images/protocol_workflow.png">
 
-## ontations used
+## Notations used
 <img src="./images/notations.png">
 
 # Installation
