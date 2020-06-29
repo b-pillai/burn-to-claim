@@ -1,4 +1,5 @@
 # The Burn-to-Claim cross-Blockchain asset transfer protocols
+
 Burn-to-claim is an open protocol developed by Griffith researchers that aims to address cross-blockchain asset transfer between networks of blockchain in a decentralised manner. The design is to transfer assets from one blockchain network to another in a way that it is being burned (destroyed) from one blockchain network and re-created on the other blockchain network. This protocol has two components: an exit transaction to generate a self-verifiable transfer-proof that the asset is burned on the source network and an entry transaction to verify the validity of transfer-proof and to re-create the asset in the destination network.
 
 ## exitTransaction()
@@ -26,11 +27,14 @@ This is typical ERC20 token contract.
 The token contract will transfer ERC20 token to the Source chain contract during the deployment.
 we will be using the transfer functions from token contract to transfer token berween accounts.
 
-# SourceChain Contract
+### SourceChain.sol
+
+### DestinationChain.sol
 
 ## A high level overview of the Burn-to-Claim protocol workflow
 
 ![](/images/burn-to-claim_protocol_message_sequence_chart.png?raw=true)
+
 ## Notations used
 <img src="./images/notations.png">
 
@@ -50,19 +54,9 @@ You need to install the following tools/packages:
 3. Deploy the contracts: `truffle migrate`
 4. Run the tests: `truffle test`
 
-
-git remote add origin https://github.com/b-pillai/burn-to-claim.git
-git push -u origin master
-
-
 # Testing
-Test 1 - Contract deployed
-Token contract
-Source chain
-Destination chain
-
-Test 2 - contract balance
-Source chian has the balance
+Test 1 - `Token.sol`, `SourceChain.sol` and `DestinationChain.sol` Contract deployed
+Test 2 - Contract balance - Source chian has the balance
 
 # To-do list on this project
 

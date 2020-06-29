@@ -24,33 +24,36 @@ function tokens(n) {
       await _token.transfer(_sourceChain.address, tokens('1000000'))
     })
 
-  /* TEST
-  deployed test - check the contract address is empty or not */
+  
+  // deployed test - check the contract address is empty or not 
   //sourceChain contract
   describe ("smart conract deployment", async()=>{
     it('Source Chain smart contract is deployed', async () => {
     const _sourceChain = await SourceChain.deployed()
     assert(_sourceChain.address !== '')
+    console.log(_sourceChain.address)
     })
   //destination chain contract
     it('Destination Chain smart contract is deployed', async () => {
     const _destinationChain = await DestinationChain.deployed()
     assert(_destinationChain.address !== '')
+    console.log(_destinationChain.address)
     })
   //Token contract
     it('Token contract is deployed', async () => {
     const _token = await Token.deployed()
     assert(_token.address !== '')
-    })// end of deployment test
+    console.log(_token.address)
+    })
   })
 
-  /* TEST */
   //test the token balance (https://youtu.be/wF0TJMPKPdQ?t=702)
   describe ("Check the balance", async()=>{
     it('The Source chain contract has tokens', async () => {
     let balance = await _token.balanceOf(_sourceChain.address)
     assert.equal(balance.toString(), tokens('1000000'))
+    console.log(balance.toString())
     })// end of token balance test
   })
   
-})//end of test condition
+})
