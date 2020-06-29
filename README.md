@@ -61,7 +61,7 @@ Test 2 - Contract balance - Source chian has the balance
 * Install truffle
 * Install ganache [https://truffleframework.com/ganache](https://truffleframework.com/ganache)
 * Launch and set the network ID to `8545`
-
+````
 $ truffle install
 $ truffle test
 
@@ -103,7 +103,7 @@ Compiling your contracts...
 
 
   10 passing (5s)
-
+````
 # To-do list on this project
 
 ## time lock
