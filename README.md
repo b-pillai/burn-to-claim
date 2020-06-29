@@ -57,6 +57,52 @@ You need to install the following tools/packages:
 # Testing
 Test 1 - `Token.sol`, `SourceChain.sol` and `DestinationChain.sol` Contract deployed
 Test 2 - Contract balance - Source chian has the balance
+## Run the tests
+* Install truffle
+* Install ganache [https://truffleframework.com/ganache](https://truffleframework.com/ganache)
+* Launch and set the network ID to `8545`
+
+$ truffle install
+$ truffle test
+
+PS C:\_ethereum\burn-to-claim> truffle test
+Using network 'development'.
+
+Compiling your contracts...
+===========================
+> Compiling .\contracts\DestinationChain.sol
+> Compiling .\contracts\Migrations.sol
+> Compiling .\contracts\SourceChain.sol
+> Compiling .\contracts\Token.sol
+> Artifacts written to C:\Users\s5039917\AppData\Local\Temp\test-2020530-24088-ouwbsg.mzyq9
+> Compiled successfully using:
+   - solc: 0.5.16+commit.9c3226ce.Emscripten.clang
+
+  Contract: Test  - contract deployment test
+    smart conract deployment
+0x8E11501e08475A5C4d45F87535452fCe92ac7565
+      √ Source Chain smart contract is deployed
+0xF9F95f5542Ec34643c1707646696a610cDc7b2FB
+      √ Destination Chain smart contract is deployed
+0xdA278B30A9AfAbDe750d4C996635080c791d08f0
+      √ Token contract is deployed
+    Check the balance
+1000000000000000000000000
+      √ The Source chain contract has tokens (78ms)
+
+  Contract: Test- Buy and sell tokens
+    Buy the Tokens
+      √ User bought a token from the contract (65ms)
+    Burn the Tokens
+1000000000000000000
+      √ The user has transferd the token to a burn address (124ms)
+      √ exitTransaction() should fail when no token transfer approved (462ms)
+      √ exitTransaction() should fail when token amount is 0 (322ms)
+      √ exitTransaction() should fail when tokens approved for some random account (610ms)
+      √ exitTransaction() should fail when the timelock is in the past (559ms)
+
+
+  10 passing (5s)
 
 # To-do list on this project
 
