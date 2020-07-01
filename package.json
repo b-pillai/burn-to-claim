@@ -21,6 +21,7 @@
   "homepage": "https://github.com/b-pillai/burn-to-claim#readme",
   "dependencies": {
     "@openzeppelin/contracts": "^3.1.0",
-    "solc": "^0.6.10"
+    "solc": "^0.6.10",
+    "web3": "^1.2.9"
   }
 }

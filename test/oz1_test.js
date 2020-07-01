@@ -1,4 +1,4 @@
-
+const web3 = require('web3')
 //import the smart contract
 const OZToken = artifacts.require('OZToken')
 const OZTokenTimelock = artifacts.require('OZTokenTimelock')
@@ -11,7 +11,7 @@ const OZTokenTimelock = artifacts.require('OZTokenTimelock')
     let _ozToken, _ozTokenTimelock
   
     // add common things
-    before (async()=>{
+  before (async()=>{
       _ozToken = await OZToken.new(1000000)
       _ozTokenTimelock = await OZTokenTimelock.new(_ozToken.address, '0x92b060bdf342b6b6e79BB7dCd8a7E65aa196B7Ff',1593807611)
       //transfer all tokens to testcontract (1 million)
