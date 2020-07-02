@@ -8,5 +8,7 @@ import "@openzeppelin/contracts/token/ERC20/TokenTimelock.sol";
 contract OZTokenTimelock is TokenTimelock {
     constructor(IERC20 token, address beneficiary, uint256 releaseTime)
     TokenTimelock(token, beneficiary, releaseTime) public {
+
+        
     }
 }
