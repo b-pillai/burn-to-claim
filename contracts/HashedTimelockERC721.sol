@@ -1,6 +1,6 @@
 pragma solidity ^0.5.0;
 
-import "openzeppelin-solidity/contracts/token/ERC721/ERC721.sol";
+import "@openzeppelin/contracts/token/ERC20/ERC20.sol";
 
 /**
 * @title Hashed Timelock Contracts (HTLCs) on Ethereum ERC721 tokens.
