@@ -14,22 +14,22 @@
   "metadata": "{\"compiler\":{\"version\":\"0.5.16+commit.9c3226ce\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"constant\":false,\"inputs\":[],\"name\":\"entryTransaction\",\"outputs\":[],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"function\"}],\"devdoc\":{\"methods\":{}},\"userdoc\":{\"methods\":{}}},\"settings\":{\"compilationTarget\":{\"/C/_ethereum/burn-to-claim/contracts/DestinationChain.sol\":\"DestinationChain\"},\"evmVersion\":\"petersburg\",\"libraries\":{},\"optimizer\":{\"enabled\":true,\"runs\":200},\"remappings\":[]},\"sources\":{\"/C/_ethereum/burn-to-claim/contracts/DestinationChain.sol\":{\"keccak256\":\"0xe4fdba7b98772eab8aaa4ce419720c0f571cf09e8fbcc71bb568c829a44a8f21\",\"urls\":[\"bzz-raw://ddc462a29defeec3e141ee659dbb0fe53a29c58c1960d74e1cae8446f91824f5\",\"dweb:/ipfs/QmYDvsMQjdribJnmgGvZmrjHeQXHdV5GFiVGxCm4zYwn5G\"]}},\"version\":1}",
   "bytecode": "0x6080604052348015600f57600080fd5b50606c80601d6000396000f3fe6080604052348015600f57600080fd5b506004361060285760003560e01c80631a5e6ba414602d575b600080fd5b60336035565b005b56fea265627a7a723158205bc33ff2922e02e81840d2706f40a1648f33a91734729b3a9fa428ad7e447cfa64736f6c63430005100032",
   "deployedBytecode": "0x6080604052348015600f57600080fd5b506004361060285760003560e01c80631a5e6ba414602d575b600080fd5b60336035565b005b56fea265627a7a723158205bc33ff2922e02e81840d2706f40a1648f33a91734729b3a9fa428ad7e447cfa64736f6c63430005100032",
-  "sourceMap": "36:440:0:-;;;;8:9:-1;5:2;;;30:1;27;20:12;5:2;36:440:0;;;;;;;",
-  "deployedSourceMap": "36:440:0:-;;;;8:9:-1;5:2;;;30:1;27;20:12;5:2;36:440:0;;;;;;;;;;;;;;;;;;;93:43;;;:::i;:::-;;;:::o",
+  "sourceMap": "36:440:1:-;;;;8:9:-1;5:2;;;30:1;27;20:12;5:2;36:440:1;;;;;;;",
+  "deployedSourceMap": "36:440:1:-;;;;8:9:-1;5:2;;;30:1;27;20:12;5:2;36:440:1;;;;;;;;;;;;;;;;;;;93:43;;;:::i;:::-;;;:::o",
   "source": "pragma solidity >=0.4.22 <0.7.0;\r\n\r\ncontract DestinationChain {\r\n//defin the paramaters\r\n\r\n\r\nfunction entryTransaction() external {\r\n\r\n}\r\n\r\nfunction importVerifier() private view {\r\n  //  if (spendVerifier() and proofVerifier()) is true\r\n //   returns true\r\n  //  else\r\n  //  returns\r\n  //  false\r\n    \r\n}\r\n\r\nfunction spendVerifier() private pure returns (bool results){\r\n return true;\r\n}\r\n\r\nfunction proofVerifier() private pure returns (bool results){\r\n return true;\r\n}\r\n\r\n}\r\n",
   "sourcePath": "C:\\_ethereum\\burn-to-claim\\contracts\\DestinationChain.sol",
   "ast": {
     "absolutePath": "/C/_ethereum/burn-to-claim/contracts/DestinationChain.sol",
     "exportedSymbols": {
       "DestinationChain": [
-        26
+        30
       ]
     },
-    "id": 27,
+    "id": 31,
     "nodeType": "SourceUnit",
     "nodes": [
       {
-        "id": 1,
+        "id": 5,
         "literals": [
           "solidity",
           ">=",
@@ -40,7 +40,7 @@
           ".0"
         ],
         "nodeType": "PragmaDirective",
-        "src": "0:32:0"
+        "src": "0:32:1"
       },
       {
         "baseContracts": [],
@@ -48,50 +48,18 @@
         "contractKind": "contract",
         "documentation": null,
         "fullyImplemented": true,
-        "id": 26,
+        "id": 30,
         "linearizedBaseContracts": [
-          26
+          30
         ],
         "name": "DestinationChain",
         "nodeType": "ContractDefinition",
         "nodes": [
           {
             "body": {
-              "id": 4,
-              "nodeType": "Block",
-              "src": "130:6:0",
-              "statements": []
-            },
-            "documentation": null,
-            "id": 5,
-            "implemented": true,
-            "kind": "function",
-            "modifiers": [],
-            "name": "entryTransaction",
-            "nodeType": "FunctionDefinition",
-            "parameters": {
-              "id": 2,
-              "nodeType": "ParameterList",
-              "parameters": [],
-              "src": "118:2:0"
-            },
-            "returnParameters": {
-              "id": 3,
-              "nodeType": "ParameterList",
-              "parameters": [],
-              "src": "130:0:0"
-            },
-            "scope": 26,
-            "src": "93:43:0",
-            "stateMutability": "nonpayable",
-            "superFunction": null,
-            "visibility": "external"
-          },
-          {
-            "body": {
               "id": 8,
               "nodeType": "Block",
-              "src": "179:126:0",
+              "src": "130:6:1",
               "statements": []
             },
             "documentation": null,
@@ -99,44 +67,76 @@
             "implemented": true,
             "kind": "function",
             "modifiers": [],
-            "name": "importVerifier",
+            "name": "entryTransaction",
             "nodeType": "FunctionDefinition",
             "parameters": {
               "id": 6,
               "nodeType": "ParameterList",
               "parameters": [],
-              "src": "163:2:0"
+              "src": "118:2:1"
             },
             "returnParameters": {
               "id": 7,
               "nodeType": "ParameterList",
               "parameters": [],
-              "src": "179:0:0"
+              "src": "130:0:1"
             },
-            "scope": 26,
-            "src": "140:165:0",
+            "scope": 30,
+            "src": "93:43:1",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "external"
+          },
+          {
+            "body": {
+              "id": 12,
+              "nodeType": "Block",
+              "src": "179:126:1",
+              "statements": []
+            },
+            "documentation": null,
+            "id": 13,
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [],
+            "name": "importVerifier",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 10,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "163:2:1"
+            },
+            "returnParameters": {
+              "id": 11,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "179:0:1"
+            },
+            "scope": 30,
+            "src": "140:165:1",
             "stateMutability": "view",
             "superFunction": null,
             "visibility": "private"
           },
           {
             "body": {
-              "id": 16,
+              "id": 20,
               "nodeType": "Block",
-              "src": "369:19:0",
+              "src": "369:19:1",
               "statements": [
                 {
                   "expression": {
                     "argumentTypes": null,
                     "hexValue": "74727565",
-                    "id": 14,
+                    "id": 18,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": true,
                     "kind": "bool",
                     "lValueRequested": false,
                     "nodeType": "Literal",
-                    "src": "380:4:0",
+                    "src": "380:4:1",
                     "subdenomination": null,
                     "typeDescriptions": {
                       "typeIdentifier": "t_bool",
@@ -144,37 +144,37 @@
                     },
                     "value": "true"
                   },
-                  "functionReturnParameters": 13,
-                  "id": 15,
+                  "functionReturnParameters": 17,
+                  "id": 19,
                   "nodeType": "Return",
-                  "src": "373:11:0"
+                  "src": "373:11:1"
                 }
               ]
             },
             "documentation": null,
-            "id": 17,
+            "id": 21,
             "implemented": true,
             "kind": "function",
             "modifiers": [],
             "name": "spendVerifier",
             "nodeType": "FunctionDefinition",
             "parameters": {
-              "id": 10,
+              "id": 14,
               "nodeType": "ParameterList",
               "parameters": [],
-              "src": "331:2:0"
+              "src": "331:2:1"
             },
             "returnParameters": {
-              "id": 13,
+              "id": 17,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 12,
+                  "id": 16,
                   "name": "results",
                   "nodeType": "VariableDeclaration",
-                  "scope": 17,
-                  "src": "356:12:0",
+                  "scope": 21,
+                  "src": "356:12:1",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -182,10 +182,10 @@
                     "typeString": "bool"
                   },
                   "typeName": {
-                    "id": 11,
+                    "id": 15,
                     "name": "bool",
                     "nodeType": "ElementaryTypeName",
-                    "src": "356:4:0",
+                    "src": "356:4:1",
                     "typeDescriptions": {
                       "typeIdentifier": "t_bool",
                       "typeString": "bool"
@@ -195,32 +195,32 @@
                   "visibility": "internal"
                 }
               ],
-              "src": "355:14:0"
+              "src": "355:14:1"
             },
-            "scope": 26,
-            "src": "309:79:0",
+            "scope": 30,
+            "src": "309:79:1",
             "stateMutability": "pure",
             "superFunction": null,
             "visibility": "private"
           },
           {
             "body": {
-              "id": 24,
+              "id": 28,
               "nodeType": "Block",
-              "src": "452:19:0",
+              "src": "452:19:1",
               "statements": [
                 {
                   "expression": {
                     "argumentTypes": null,
                     "hexValue": "74727565",
-                    "id": 22,
+                    "id": 26,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": true,
                     "kind": "bool",
                     "lValueRequested": false,
                     "nodeType": "Literal",
-                    "src": "463:4:0",
+                    "src": "463:4:1",
                     "subdenomination": null,
                     "typeDescriptions": {
                       "typeIdentifier": "t_bool",
@@ -228,37 +228,37 @@
                     },
                     "value": "true"
                   },
-                  "functionReturnParameters": 21,
-                  "id": 23,
+                  "functionReturnParameters": 25,
+                  "id": 27,
                   "nodeType": "Return",
-                  "src": "456:11:0"
+                  "src": "456:11:1"
                 }
               ]
             },
             "documentation": null,
-            "id": 25,
+            "id": 29,
             "implemented": true,
             "kind": "function",
             "modifiers": [],
             "name": "proofVerifier",
             "nodeType": "FunctionDefinition",
             "parameters": {
-              "id": 18,
+              "id": 22,
               "nodeType": "ParameterList",
               "parameters": [],
-              "src": "414:2:0"
+              "src": "414:2:1"
             },
             "returnParameters": {
-              "id": 21,
+              "id": 25,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 20,
+                  "id": 24,
                   "name": "results",
                   "nodeType": "VariableDeclaration",
-                  "scope": 25,
-                  "src": "439:12:0",
+                  "scope": 29,
+                  "src": "439:12:1",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -266,10 +266,10 @@
                     "typeString": "bool"
                   },
                   "typeName": {
-                    "id": 19,
+                    "id": 23,
                     "name": "bool",
                     "nodeType": "ElementaryTypeName",
-                    "src": "439:4:0",
+                    "src": "439:4:1",
                     "typeDescriptions": {
                       "typeIdentifier": "t_bool",
                       "typeString": "bool"
@@ -279,33 +279,33 @@
                   "visibility": "internal"
                 }
               ],
-              "src": "438:14:0"
+              "src": "438:14:1"
             },
-            "scope": 26,
-            "src": "392:79:0",
+            "scope": 30,
+            "src": "392:79:1",
             "stateMutability": "pure",
             "superFunction": null,
             "visibility": "private"
           }
         ],
-        "scope": 27,
-        "src": "36:440:0"
+        "scope": 31,
+        "src": "36:440:1"
       }
     ],
-    "src": "0:478:0"
+    "src": "0:478:1"
   },
   "legacyAST": {
     "absolutePath": "/C/_ethereum/burn-to-claim/contracts/DestinationChain.sol",
     "exportedSymbols": {
       "DestinationChain": [
-        26
+        30
       ]
     },
-    "id": 27,
+    "id": 31,
     "nodeType": "SourceUnit",
     "nodes": [
       {
-        "id": 1,
+        "id": 5,
         "literals": [
           "solidity",
           ">=",
@@ -316,7 +316,7 @@
           ".0"
         ],
         "nodeType": "PragmaDirective",
-        "src": "0:32:0"
+        "src": "0:32:1"
       },
       {
         "baseContracts": [],
@@ -324,50 +324,18 @@
         "contractKind": "contract",
         "documentation": null,
         "fullyImplemented": true,
-        "id": 26,
+        "id": 30,
         "linearizedBaseContracts": [
-          26
+          30
         ],
         "name": "DestinationChain",
         "nodeType": "ContractDefinition",
         "nodes": [
           {
             "body": {
-              "id": 4,
-              "nodeType": "Block",
-              "src": "130:6:0",
-              "statements": []
-            },
-            "documentation": null,
-            "id": 5,
-            "implemented": true,
-            "kind": "function",
-            "modifiers": [],
-            "name": "entryTransaction",
-            "nodeType": "FunctionDefinition",
-            "parameters": {
-              "id": 2,
-              "nodeType": "ParameterList",
-              "parameters": [],
-              "src": "118:2:0"
-            },
-            "returnParameters": {
-              "id": 3,
-              "nodeType": "ParameterList",
-              "parameters": [],
-              "src": "130:0:0"
-            },
-            "scope": 26,
-            "src": "93:43:0",
-            "stateMutability": "nonpayable",
-            "superFunction": null,
-            "visibility": "external"
-          },
-          {
-            "body": {
               "id": 8,
               "nodeType": "Block",
-              "src": "179:126:0",
+              "src": "130:6:1",
               "statements": []
             },
             "documentation": null,
@@ -375,44 +343,76 @@
             "implemented": true,
             "kind": "function",
             "modifiers": [],
-            "name": "importVerifier",
+            "name": "entryTransaction",
             "nodeType": "FunctionDefinition",
             "parameters": {
               "id": 6,
               "nodeType": "ParameterList",
               "parameters": [],
-              "src": "163:2:0"
+              "src": "118:2:1"
             },
             "returnParameters": {
               "id": 7,
               "nodeType": "ParameterList",
               "parameters": [],
-              "src": "179:0:0"
+              "src": "130:0:1"
             },
-            "scope": 26,
-            "src": "140:165:0",
+            "scope": 30,
+            "src": "93:43:1",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "external"
+          },
+          {
+            "body": {
+              "id": 12,
+              "nodeType": "Block",
+              "src": "179:126:1",
+              "statements": []
+            },
+            "documentation": null,
+            "id": 13,
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [],
+            "name": "importVerifier",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 10,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "163:2:1"
+            },
+            "returnParameters": {
+              "id": 11,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "179:0:1"
+            },
+            "scope": 30,
+            "src": "140:165:1",
             "stateMutability": "view",
             "superFunction": null,
             "visibility": "private"
           },
           {
             "body": {
-              "id": 16,
+              "id": 20,
               "nodeType": "Block",
-              "src": "369:19:0",
+              "src": "369:19:1",
               "statements": [
                 {
                   "expression": {
                     "argumentTypes": null,
                     "hexValue": "74727565",
-                    "id": 14,
+                    "id": 18,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": true,
                     "kind": "bool",
                     "lValueRequested": false,
                     "nodeType": "Literal",
-                    "src": "380:4:0",
+                    "src": "380:4:1",
                     "subdenomination": null,
                     "typeDescriptions": {
                       "typeIdentifier": "t_bool",
@@ -420,37 +420,37 @@
                     },
                     "value": "true"
                   },
-                  "functionReturnParameters": 13,
-                  "id": 15,
+                  "functionReturnParameters": 17,
+                  "id": 19,
                   "nodeType": "Return",
-                  "src": "373:11:0"
+                  "src": "373:11:1"
                 }
               ]
             },
             "documentation": null,
-            "id": 17,
+            "id": 21,
             "implemented": true,
             "kind": "function",
             "modifiers": [],
             "name": "spendVerifier",
             "nodeType": "FunctionDefinition",
             "parameters": {
-              "id": 10,
+              "id": 14,
               "nodeType": "ParameterList",
               "parameters": [],
-              "src": "331:2:0"
+              "src": "331:2:1"
             },
             "returnParameters": {
-              "id": 13,
+              "id": 17,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 12,
+                  "id": 16,
                   "name": "results",
                   "nodeType": "VariableDeclaration",
-                  "scope": 17,
-                  "src": "356:12:0",
+                  "scope": 21,
+                  "src": "356:12:1",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -458,10 +458,10 @@
                     "typeString": "bool"
                   },
                   "typeName": {
-                    "id": 11,
+                    "id": 15,
                     "name": "bool",
                     "nodeType": "ElementaryTypeName",
-                    "src": "356:4:0",
+                    "src": "356:4:1",
                     "typeDescriptions": {
                       "typeIdentifier": "t_bool",
                       "typeString": "bool"
@@ -471,32 +471,32 @@
                   "visibility": "internal"
                 }
               ],
-              "src": "355:14:0"
+              "src": "355:14:1"
             },
-            "scope": 26,
-            "src": "309:79:0",
+            "scope": 30,
+            "src": "309:79:1",
             "stateMutability": "pure",
             "superFunction": null,
             "visibility": "private"
           },
           {
             "body": {
-              "id": 24,
+              "id": 28,
               "nodeType": "Block",
-              "src": "452:19:0",
+              "src": "452:19:1",
               "statements": [
                 {
                   "expression": {
                     "argumentTypes": null,
                     "hexValue": "74727565",
-                    "id": 22,
+                    "id": 26,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": true,
                     "kind": "bool",
                     "lValueRequested": false,
                     "nodeType": "Literal",
-                    "src": "463:4:0",
+                    "src": "463:4:1",
                     "subdenomination": null,
                     "typeDescriptions": {
                       "typeIdentifier": "t_bool",
@@ -504,37 +504,37 @@
                     },
                     "value": "true"
                   },
-                  "functionReturnParameters": 21,
-                  "id": 23,
+                  "functionReturnParameters": 25,
+                  "id": 27,
                   "nodeType": "Return",
-                  "src": "456:11:0"
+                  "src": "456:11:1"
                 }
               ]
             },
             "documentation": null,
-            "id": 25,
+            "id": 29,
             "implemented": true,
             "kind": "function",
             "modifiers": [],
             "name": "proofVerifier",
             "nodeType": "FunctionDefinition",
             "parameters": {
-              "id": 18,
+              "id": 22,
               "nodeType": "ParameterList",
               "parameters": [],
-              "src": "414:2:0"
+              "src": "414:2:1"
             },
             "returnParameters": {
-              "id": 21,
+              "id": 25,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 20,
+                  "id": 24,
                   "name": "results",
                   "nodeType": "VariableDeclaration",
-                  "scope": 25,
-                  "src": "439:12:0",
+                  "scope": 29,
+                  "src": "439:12:1",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -542,10 +542,10 @@
                     "typeString": "bool"
                   },
                   "typeName": {
-                    "id": 19,
+                    "id": 23,
                     "name": "bool",
                     "nodeType": "ElementaryTypeName",
-                    "src": "439:4:0",
+                    "src": "439:4:1",
                     "typeDescriptions": {
                       "typeIdentifier": "t_bool",
                       "typeString": "bool"
@@ -555,20 +555,20 @@
                   "visibility": "internal"
                 }
               ],
-              "src": "438:14:0"
+              "src": "438:14:1"
             },
-            "scope": 26,
-            "src": "392:79:0",
+            "scope": 30,
+            "src": "392:79:1",
             "stateMutability": "pure",
             "superFunction": null,
             "visibility": "private"
           }
         ],
-        "scope": 27,
-        "src": "36:440:0"
+        "scope": 31,
+        "src": "36:440:1"
       }
     ],
-    "src": "0:478:0"
+    "src": "0:478:1"
   },
   "compiler": {
     "name": "solc",
@@ -578,8 +578,8 @@
     "5777": {
       "events": {},
       "links": {},
-      "address": "0xAd6c411B420E4fe29a10506E090c62CeE26183D8",
-      "transactionHash": "0xbc62fcbcc638495b120cfb2a0d4319361b82e6b73d827b65796379ce42d1f7fe"
+      "address": "0x4C401E83589dc72c7a76f537FC25d1C002243AE4",
+      "transactionHash": "0xbc7da2e635a5a0f123abd927230da4827f0e366d53e716e30cf6ad8284a24f0b"
     },
     "1592532580326": {
       "events": {},
@@ -622,10 +622,16 @@
       "links": {},
       "address": "0xeCC4ea10394D71f89aB50DA7654c4C8ff575c5CA",
       "transactionHash": "0x17f698c74c55ee4dfef2c5b876b6bcd6485ae79e2909f445ad082a41251d3ebf"
+    },
+    "1593673918880": {
+      "events": {},
+      "links": {},
+      "address": "0x3248cB6bB01661dBfC6fe2F994b00A156f0dA5BD",
+      "transactionHash": "0x13334189f366e4fc178fcfd0c967e8a3d48fbb40326c7bb2e473049cb66de927"
     }
   },
   "schemaVersion": "3.2.0",
-  "updatedAt": "2020-06-29T00:32:10.164Z",
+  "updatedAt": "2020-07-11T11:05:14.275Z",
   "networkType": "ethereum",
   "devdoc": {
     "methods": {}
