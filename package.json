@@ -18,5 +18,9 @@
   "bugs": {
     "url": "https://github.com/b-pillai/burn-to-claim/issues"
   },
-  "homepage": "https://github.com/b-pillai/burn-to-claim#readme"
+  "homepage": "https://github.com/b-pillai/burn-to-claim#readme",
+  "dependencies": {
+    "@openzeppelin/contracts": "^3.1.0",
+    "solc": "^0.6.10"
+  }
 }
