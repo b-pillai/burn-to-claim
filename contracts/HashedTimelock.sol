@@ -1,5 +1,6 @@
-pragma solidity ^0.5.0;
-
+// contracts/MyNFT.sol
+// SPDX-License-Identifier: MIT
+pragma solidity ^0.6.0;
 /**
  * @title Hashed Timelock Contracts (HTLCs) on Ethereum ETH.
  *
@@ -178,11 +179,7 @@ contract HashedTimelock {
         return true;
     }
 
-    /**
-     * @dev Get contract details.
-     * @param _contractId HTLC contract id
-     * @return All parameters in struct LockContract for _contractId HTLC
-     */
+
     function getContract(bytes32 _contractId)
         public
         view

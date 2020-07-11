@@ -1,5 +1,6 @@
+// contracts/MyNFT.sol
+// SPDX-License-Identifier: MIT
 pragma solidity ^0.6.0;
-
 contract Migrations {
   address public owner;
   uint256 public last_completed_migration;
