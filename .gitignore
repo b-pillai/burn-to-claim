@@ -1,3 +1,11 @@
 node_modules
 build
+build/contracts
+build/contracts/
+build/contracts/*
 .env
+/build/contracts/*
+/build/*
+build/*
+build/
+build/contracts/*
