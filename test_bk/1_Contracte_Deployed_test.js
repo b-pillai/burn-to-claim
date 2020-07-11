@@ -12,6 +12,7 @@ function tokens(n) {
   //begin the test conditions
   //'sender' - the first account and 'recipient' the second address
    contract('Test  - contract deployment test', ([deployer, investor]) => {
+    
     //declare the variables 
     let _token, _sourceChain, _destinationChain
   
@@ -36,7 +37,19 @@ function tokens(n) {
     it('Source Chain smart contract is deployed', async () => {
     const _sourceChain = await SourceChain.deployed()
     assert(_sourceChain.address !== '')
-    console.log(_sourceChain.address)
+    // console.log(_sourceChain.address)
+    })
+  //destination chain contract
+    it('Destination Chain smart contract is deployed', async () => {
+    const _destinationChain = await DestinationChain.deployed()
+    assert(_destinationChain.address !== '')
+    // console.log(_destinationChain.address)
+    })
+  //Token contract
+    it('Token contract is deployed', async () => {
+    const _token = await Token.deployed()
+    assert(_token.address !== '')
+    // console.log(_token.address)
     })
   })
 
@@ -44,8 +57,8 @@ function tokens(n) {
   describe ("Check the balance", async()=>{
     it('The Source chain contract has tokens', async () => {
     let balance = await _token.balanceOf(_sourceChain.address)
-    assert.equal(balance.toString(), 1000000)
-    console.log(balance.toString())
+    assert.equal(balance.toString(), tokens('1000000'))
+    // console.log(balance.toString())
     })// end of token balance test
   })
   
