@@ -295,6 +295,7 @@
       "type": "function"
     }
   ],
+<<<<<<< HEAD
   "metadata": "{\"compiler\":{\"version\":\"0.5.16+commit.9c3226ce\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"inputs\":[{\"internalType\":\"contract Token\",\"name\":\"_token\",\"type\":\"address\"}],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"constructor\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"bytes32\",\"name\":\"contractId\",\"type\":\"bytes32\"}],\"name\":\"HTLCERC20Refund\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"bytes32\",\"name\":\"contractId\",\"type\":\"bytes32\"}],\"name\":\"HTLCERC20Withdraw\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":false,\"internalType\":\"address\",\"name\":\"account_from\",\"type\":\"address\"},{\"indexed\":false,\"internalType\":\"address\",\"name\":\"address_to\",\"type\":\"address\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"unit_token\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"bytes32\",\"name\":\"_secretCode\",\"type\":\"bytes32\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"_timelock\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"_assetStatus\",\"type\":\"uint256\"}],\"name\":\"event_exitTransaction\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":false,\"internalType\":\"address\",\"name\":\"account_from\",\"type\":\"address\"},{\"indexed\":false,\"internalType\":\"address\",\"name\":\"account_to\",\"type\":\"address\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"unit_token\",\"type\":\"uint256\"}],\"name\":\"event_tokensSold\",\"type\":\"event\"},{\"constant\":true,\"inputs\":[],\"name\":\"assetVerifier\",\"outputs\":[{\"internalType\":\"bool\",\"name\":\"results\",\"type\":\"bool\"}],\"payable\":false,\"stateMutability\":\"pure\",\"type\":\"function\"},{\"constant\":false,\"inputs\":[],\"name\":\"buyTokens\",\"outputs\":[],\"payable\":true,\"stateMutability\":\"payable\",\"type\":\"function\"},{\"constant\":false,\"inputs\":[{\"internalType\":\"bytes32\",\"name\":\"_contractId\",\"type\":\"bytes32\"},{\"internalType\":\"bytes32\",\"name\":\"_preimage\",\"type\":\"bytes32\"}],\"name\":\"entryTransaction\",\"outputs\":[{\"internalType\":\"bool\",\"name\":\"\",\"type\":\"bool\"}],\"payable\":true,\"stateMutability\":\"payable\",\"type\":\"function\"},{\"constant\":false,\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"_asset\",\"type\":\"uint256\"},{\"internalType\":\"address\",\"name\":\"_burnAddress\",\"type\":\"address\"},{\"internalType\":\"bytes32\",\"name\":\"_secretCode\",\"type\":\"bytes32\"},{\"internalType\":\"uint256\",\"name\":\"_timelock\",\"type\":\"uint256\"}],\"name\":\"exitTransaction\",\"outputs\":[{\"internalType\":\"bytes32\",\"name\":\"contractId\",\"type\":\"bytes32\"}],\"payable\":true,\"stateMutability\":\"payable\",\"type\":\"function\"},{\"constant\":true,\"inputs\":[],\"name\":\"exportVerifier\",\"outputs\":[{\"internalType\":\"bool\",\"name\":\"results\",\"type\":\"bool\"}],\"payable\":false,\"stateMutability\":\"pure\",\"type\":\"function\"},{\"constant\":true,\"inputs\":[],\"name\":\"proofVerifier\",\"outputs\":[{\"internalType\":\"bool\",\"name\":\"results\",\"type\":\"bool\"}],\"payable\":false,\"stateMutability\":\"pure\",\"type\":\"function\"},{\"constant\":false,\"inputs\":[{\"internalType\":\"bytes32\",\"name\":\"_contractId\",\"type\":\"bytes32\"},{\"internalType\":\"bytes32\",\"name\":\"_preimage\",\"type\":\"bytes32\"}],\"name\":\"reclaimTransaction\",\"outputs\":[{\"internalType\":\"bool\",\"name\":\"\",\"type\":\"bool\"}],\"payable\":true,\"stateMutability\":\"payable\",\"type\":\"function\"},{\"constant\":true,\"inputs\":[],\"name\":\"reclaimVerifier\",\"outputs\":[{\"internalType\":\"bool\",\"name\":\"results\",\"type\":\"bool\"}],\"payable\":false,\"stateMutability\":\"pure\",\"type\":\"function\"},{\"constant\":true,\"inputs\":[],\"name\":\"spendVerifier\",\"outputs\":[{\"internalType\":\"bool\",\"name\":\"results\",\"type\":\"bool\"}],\"payable\":false,\"stateMutability\":\"pure\",\"type\":\"function\"},{\"constant\":true,\"inputs\":[],\"name\":\"token\",\"outputs\":[{\"internalType\":\"contract Token\",\"name\":\"\",\"type\":\"address\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"}],\"devdoc\":{\"methods\":{\"entryTransaction(bytes32,bytes32)\":{\"details\":\"Called by the receiver once they know the preimage of the hashlock. This will transfer ownership of the locked tokens to their address. \",\"params\":{\"_contractId\":\"Id of the HTLC.\",\"_preimage\":\"sha256(_preimage) should equal the contract hashlock.\"},\"return\":\"bool true on success\"},\"exitTransaction(uint256,address,bytes32,uint256)\":{\"details\":\"Sender sets up the hash timelock burn contract.      * NOTE: sender must first call the approve() function on the token contract. \",\"params\":{\"_asset\":\"asset to be burned.\",\"_burnAddress\":\"Burn Address.\",\"_secretCode\":\"A sha-2 sha256 hash hashlock.\",\"_timelock\":\"UNIX epoch seconds time that the lock expires at.       Reclaim can be made after this time. \"},\"return\":\"Tx_receipt - Transaction receipt.      \"},\"reclaimTransaction(bytes32,bytes32)\":{\"details\":\"Called by the receiver once they know the preimage of the hashlock. This will transfer ownership of the locked tokens to their address. \",\"params\":{\"_contractId\":\"Id of the HTLC.\",\"_preimage\":\"sha256(_preimage) should equal the contract hashlock.\"},\"return\":\"bool true on success\"}},\"title\":\"Source Chain Contract. This contract provide a way to generate an exit proof.  Protocol: 1) exitTransaction (asset, burnaddress, hashlock, timelock) A sender calls this to burn his asset to a burn address which creatas an transfer proof for a given asset, and returneds a 32 byte transaction recept. - Transaction is timelocked for a given time. - A preimage of a secret code hash is added. 2) reclaimTransaction () After timelock has expired and if the receiver did not withdraw the asset the sender can get their asset back with this function.\"},\"userdoc\":{\"methods\":{}}},\"settings\":{\"compilationTarget\":{\"/C/_ethereum/burn-to-claim/contracts/SourceChain.sol\":\"SourceChain\"},\"evmVersion\":\"petersburg\",\"libraries\":{},\"optimizer\":{\"enabled\":true,\"runs\":200},\"remappings\":[]},\"sources\":{\"/C/_ethereum/burn-to-claim/contracts/SourceChain.sol\":{\"keccak256\":\"0xeddc5e9cc94d541202033da8e375aa9ee4968c91f3d7e04dc7d4869e09f360de\",\"urls\":[\"bzz-raw://dfd50306b7f51763e8e4b3e9e06a82d6475f292328e1dfa53b3617e7dfe7645d\",\"dweb:/ipfs/QmcKHkmDgYykWn5KTNnBbf1j1CDtYLvaMMeXGGnFb1axMR\"]},\"/C/_ethereum/burn-to-claim/contracts/Token.sol\":{\"keccak256\":\"0xec2a39d40baae0f185014be6e9346acdd976de1a710e367c3718702002a0e2ce\",\"urls\":[\"bzz-raw://031c4c7737d65d976a02e652787ce76942d62c8f17dcc0c0770d2368c2d5fee5\",\"dweb:/ipfs/Qmb6L1HE2QJwv1SmC5XTpkrELTdVrkBG7XMcMbhFKfkLV5\"]}},\"version\":1}",
   "bytecode": "0x608060405234801561001057600080fd5b50604051610b7c380380610b7c8339818101604052602081101561003357600080fd5b5051600080546001600160a01b039092166001600160a01b0319909216919091179055610b17806100656000396000f3fe6080604052600436106100915760003560e01c806396cbc43a1161005957806396cbc43a146100965780639e8de3ed14610096578063d0febe4c1461012c578063facc394314610096578063fc0c546a1461013657610091565b806316829b92146100965780637fa417b314610096578063824af90f146100bf578063825b343f146100bf578063838d1ac4146100e2575b600080fd5b3480156100a257600080fd5b506100ab610167565b604080519115158252519081900360200190f35b6100ab600480360360408110156100d557600080fd5b508035906020013561016c565b61011a600480360360808110156100f857600080fd5b508035906001600160a01b0360208201351690604081013590606001356104d7565b60408051918252519081900360200190f35b6101346108cd565b005b34801561014257600080fd5b5061014b610a22565b604080516001600160a01b039092168252519081900360200190f35b600190565b600061017783610a31565b6101c8576040805162461bcd60e51b815260206004820152601960248201527f636f6e7472616374496420646f6573206e6f7420657869737400000000000000604482015290519081900360640190fd5b600282604051602001808281526020019150506040516020818303038152906040526040518082805190602001908083835b602083106102195780518252601f1990920191602091820191016101fa565b51815160209384036101000a60001901801990921691161790526040519190930194509192505080830381855afa158015610258573d6000803e3d6000fd5b5050506040513d602081101561026d57600080fd5b5051600084815260016020526040902060030154146102d3576040805162461bcd60e51b815260206004820152601c60248201527f686173686c6f636b206861736820646f6573206e6f74206d6174636800000000604482015290519081900360640190fd5b600083815260016020819052604090912001546001600160a01b03163314610342576040805162461bcd60e51b815260206004820152601a60248201527f776974686472617761626c653a206e6f74207265636569766572000000000000604482015290519081900360640190fd5b60008381526001602052604090206005015460ff16156103a9576040805162461bcd60e51b815260206004820152601f60248201527f776974686472617761626c653a20616c72656164792077697468647261776e00604482015290519081900360640190fd5b60008381526001602052604090206004015442106103f85760405162461bcd60e51b8152600401808060200182810382526031815260200180610ab26031913960400191505060405180910390fd5b60008381526001602081815260408084206006810187905560058101805460ff191690941790935583546002840154825163a9059cbb60e01b81523360048201526024810191909152915193946001600160a01b039091169363a9059cbb936044808501949193918390030190829087803b15801561047657600080fd5b505af115801561048a573d6000803e3d6000fd5b505050506040513d60208110156104a057600080fd5b505060405184907f15a71365fee30a355046c80d10aab98a49c3558b2272658d6c551733203e9bbe90600090a25060019392505050565b600080851161052d576040805162461bcd60e51b815260206004820152601860248201527f617373657420616d6f756e74206d757374206265203e20300000000000000000604482015290519081900360640190fd5b42821161056b5760405162461bcd60e51b8152600401808060200182810382526023815260200180610a6d6023913960400191505060405180910390fd5b6002338587868660405160200180866001600160a01b03166001600160a01b031660601b8152601401856001600160a01b03166001600160a01b031660601b8152601401848152602001838152602001828152602001955050505050506040516020818303038152906040526040518082805190602001908083835b602083106106065780518252601f1990920191602091820191016105e7565b51815160209384036101000a60001901801990921691161790526040519190930194509192505080830381855afa158015610645573d6000803e3d6000fd5b5050506040513d602081101561065a57600080fd5b5051905061066781610a31565b156106b9576040805162461bcd60e51b815260206004820152601a60248201527f5472616e73616374696f6e20616c726561647920657869737473000000000000604482015290519081900360640190fd5b60008054604080516323b872dd60e01b81523360048201526001600160a01b038881166024830152604482018a9052915191909216926323b872dd92606480820193602093909283900390910190829087803b15801561071857600080fd5b505af115801561072c573d6000803e3d6000fd5b505050506040513d602081101561074257600080fd5b505161077f5760405162461bcd60e51b8152600401808060200182810382526022815260200180610a906022913960400191505060405180910390fd5b6000805460ff60a01b1916600160a11b178155604080516101008082018352338083526001600160a01b0389811660208086019182528587018d8152606087018c8152608088018c815260a089018b815260c08a018c815260e08b018d81528e8e526001968790529b909c2099518a549088166001600160a01b0319918216178b559551948a0180549590971694909516939093179094555160028701559151600386015590516004850155516005840180549651151590930261ff001991151560ff19909716969096171694909417905590516006909101557fe377b499c44b3f95d3f3c5a895b32e8d6df9c8e4222da9802cfbcf361e6c5fee9085878686610887610a4e565b604080516001600160a01b039788168152959096166020860152848601939093526060840191909152608083015260a082015290519081900360c00190a1949350505050565b600054604080516370a0823160e01b81523060048201529051349283926001600160a01b03909116916370a0823191602480820192602092909190829003018186803b15801561091c57600080fd5b505afa158015610930573d6000803e3d6000fd5b505050506040513d602081101561094657600080fd5b5051101561095357600080fd5b600080546040805163a9059cbb60e01b81523360048201526024810185905290516001600160a01b039092169263a9059cbb926044808401936020939083900390910190829087803b1580156109a857600080fd5b505af11580156109bc573d6000803e3d6000fd5b505050506040513d60208110156109d257600080fd5b5050600054604080513381526001600160a01b039092166020830152818101839052517f7007bc29a103fd08e84c31c574ced1767c37dc3a8450bee57025a64d1750eaf39181900360600190a150565b6000546001600160a01b031681565b6000908152600160205260409020546001600160a01b0316151590565b60008054600160a01b900460ff166002811115610a6757fe5b90509056fe74696d656c6f636b2074696d65206d75737420626520696e20746865206675747572657472616e7366657246726f6d2073656e64657220746f2074686973206661696c6564776974686472617761626c653a2074696d656c6f636b2074696d65206d75737420626520696e2074686520667574757265a265627a7a7231582012cb059ba52db2b417af1e80c2301dd019a229eda68250bfde545b6a94d9dcfd64736f6c63430005100032",
   "deployedBytecode": "0x6080604052600436106100915760003560e01c806396cbc43a1161005957806396cbc43a146100965780639e8de3ed14610096578063d0febe4c1461012c578063facc394314610096578063fc0c546a1461013657610091565b806316829b92146100965780637fa417b314610096578063824af90f146100bf578063825b343f146100bf578063838d1ac4146100e2575b600080fd5b3480156100a257600080fd5b506100ab610167565b604080519115158252519081900360200190f35b6100ab600480360360408110156100d557600080fd5b508035906020013561016c565b61011a600480360360808110156100f857600080fd5b508035906001600160a01b0360208201351690604081013590606001356104d7565b60408051918252519081900360200190f35b6101346108cd565b005b34801561014257600080fd5b5061014b610a22565b604080516001600160a01b039092168252519081900360200190f35b600190565b600061017783610a31565b6101c8576040805162461bcd60e51b815260206004820152601960248201527f636f6e7472616374496420646f6573206e6f7420657869737400000000000000604482015290519081900360640190fd5b600282604051602001808281526020019150506040516020818303038152906040526040518082805190602001908083835b602083106102195780518252601f1990920191602091820191016101fa565b51815160209384036101000a60001901801990921691161790526040519190930194509192505080830381855afa158015610258573d6000803e3d6000fd5b5050506040513d602081101561026d57600080fd5b5051600084815260016020526040902060030154146102d3576040805162461bcd60e51b815260206004820152601c60248201527f686173686c6f636b206861736820646f6573206e6f74206d6174636800000000604482015290519081900360640190fd5b600083815260016020819052604090912001546001600160a01b03163314610342576040805162461bcd60e51b815260206004820152601a60248201527f776974686472617761626c653a206e6f74207265636569766572000000000000604482015290519081900360640190fd5b60008381526001602052604090206005015460ff16156103a9576040805162461bcd60e51b815260206004820152601f60248201527f776974686472617761626c653a20616c72656164792077697468647261776e00604482015290519081900360640190fd5b60008381526001602052604090206004015442106103f85760405162461bcd60e51b8152600401808060200182810382526031815260200180610ab26031913960400191505060405180910390fd5b60008381526001602081815260408084206006810187905560058101805460ff191690941790935583546002840154825163a9059cbb60e01b81523360048201526024810191909152915193946001600160a01b039091169363a9059cbb936044808501949193918390030190829087803b15801561047657600080fd5b505af115801561048a573d6000803e3d6000fd5b505050506040513d60208110156104a057600080fd5b505060405184907f15a71365fee30a355046c80d10aab98a49c3558b2272658d6c551733203e9bbe90600090a25060019392505050565b600080851161052d576040805162461bcd60e51b815260206004820152601860248201527f617373657420616d6f756e74206d757374206265203e20300000000000000000604482015290519081900360640190fd5b42821161056b5760405162461bcd60e51b8152600401808060200182810382526023815260200180610a6d6023913960400191505060405180910390fd5b6002338587868660405160200180866001600160a01b03166001600160a01b031660601b8152601401856001600160a01b03166001600160a01b031660601b8152601401848152602001838152602001828152602001955050505050506040516020818303038152906040526040518082805190602001908083835b602083106106065780518252601f1990920191602091820191016105e7565b51815160209384036101000a60001901801990921691161790526040519190930194509192505080830381855afa158015610645573d6000803e3d6000fd5b5050506040513d602081101561065a57600080fd5b5051905061066781610a31565b156106b9576040805162461bcd60e51b815260206004820152601a60248201527f5472616e73616374696f6e20616c726561647920657869737473000000000000604482015290519081900360640190fd5b60008054604080516323b872dd60e01b81523360048201526001600160a01b038881166024830152604482018a9052915191909216926323b872dd92606480820193602093909283900390910190829087803b15801561071857600080fd5b505af115801561072c573d6000803e3d6000fd5b505050506040513d602081101561074257600080fd5b505161077f5760405162461bcd60e51b8152600401808060200182810382526022815260200180610a906022913960400191505060405180910390fd5b6000805460ff60a01b1916600160a11b178155604080516101008082018352338083526001600160a01b0389811660208086019182528587018d8152606087018c8152608088018c815260a089018b815260c08a018c815260e08b018d81528e8e526001968790529b909c2099518a549088166001600160a01b0319918216178b559551948a0180549590971694909516939093179094555160028701559151600386015590516004850155516005840180549651151590930261ff001991151560ff19909716969096171694909417905590516006909101557fe377b499c44b3f95d3f3c5a895b32e8d6df9c8e4222da9802cfbcf361e6c5fee9085878686610887610a4e565b604080516001600160a01b039788168152959096166020860152848601939093526060840191909152608083015260a082015290519081900360c00190a1949350505050565b600054604080516370a0823160e01b81523060048201529051349283926001600160a01b03909116916370a0823191602480820192602092909190829003018186803b15801561091c57600080fd5b505afa158015610930573d6000803e3d6000fd5b505050506040513d602081101561094657600080fd5b5051101561095357600080fd5b600080546040805163a9059cbb60e01b81523360048201526024810185905290516001600160a01b039092169263a9059cbb926044808401936020939083900390910190829087803b1580156109a857600080fd5b505af11580156109bc573d6000803e3d6000fd5b505050506040513d60208110156109d257600080fd5b5050600054604080513381526001600160a01b039092166020830152818101839052517f7007bc29a103fd08e84c31c574ced1767c37dc3a8450bee57025a64d1750eaf39181900360600190a150565b6000546001600160a01b031681565b6000908152600160205260409020546001600160a01b0316151590565b60008054600160a01b900460ff166002811115610a6757fe5b90509056fe74696d656c6f636b2074696d65206d75737420626520696e20746865206675747572657472616e7366657246726f6d2073656e64657220746f2074686973206661696c6564776974686472617761626c653a2074696d656c6f636b2074696d65206d75737420626520696e2074686520667574757265a265627a7a7231582012cb059ba52db2b417af1e80c2301dd019a229eda68250bfde545b6a94d9dcfd64736f6c63430005100032",
@@ -302,8 +303,17 @@
   "deployedSourceMap": "692:9000:3:-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;8559:158;;8:9:-1;5:2;;;30:1;27;20:12;5:2;8559:158:3;;;:::i;:::-;;;;;;;;;;;;;;;;;;5477:1093;;;;;;13:2:-1;8:3;5:11;2:2;;;29:1;26;19:12;2:2;-1:-1;5477:1093:3;;;;;;;:::i;3278:1849::-;;;;;;13:3:-1;8;5:12;2:2;;;30:1;27;20:12;2:2;-1:-1;3278:1849:3;;;-1:-1:-1;;;;;3278:1849:3;;;;;;;;;;;;;;;:::i;:::-;;;;;;;;;;;;;;;;8974:397;;;:::i;:::-;;748:18;;8:9:-1;5:2;;;30:1;27;20:12;5:2;748:18:3;;;:::i;:::-;;;;-1:-1:-1;;;;;748:18:3;;;;;;;;;;;;;;8559:158;8705:4;8559:158;:::o;5477:1093::-;5596:4;5661:25;5674:11;5661:12;:25::i;:::-;5653:63;;;;;-1:-1:-1;;;5653:63:3;;;;;;;;;;;;;;;;;;;;;;;;;;;;5786:35;5810:9;5793:27;;;;;;;;;;;;;;;49:4:-1;39:7;30;26:21;22:32;13:7;6:49;5793:27:3;;;5786:35;;;;;;;;;;;;;36:153:-1;66:2;61:3;58:11;36:153;;176:10;;164:23;;-1:-1;;139:12;;;;98:2;89:12;;;;114;36:153;;;299:10;344;;263:2;259:12;;;254:3;250:22;-1:-1;;246:30;311:9;;295:26;;;340:21;;377:20;365:33;;5786:35:3;;;;;;;-1:-1:-1;263:2;;-1:-1;;5786:35:3;;;;;;;;8:9:-1;5:2;;;45:16;42:1;39;24:38;77:16;74:1;67:27;5:2;5786:35:3;;;;;;13:2:-1;8:3;5:11;2:2;;;29:1;26;19:12;2:2;-1:-1;5786:35:3;5749:22;;;;:9;5786:35;5749:22;;;;:33;;;:72;5727:150;;;;;-1:-1:-1;;;5727:150:3;;;;;;;;;;;;;;;;;;;;;;;;;;;;5910:22;;;;:9;:22;;;;;;;;:31;;-1:-1:-1;;;;;5910:31:3;5945:10;5910:45;5888:121;;;;;-1:-1:-1;;;5888:121:3;;;;;;;;;;;;;;;;;;;;;;;;;;;;6042:22;;;;:9;:22;;;;;:32;;;;;:41;6020:122;;;;;-1:-1:-1;;;6020:122:3;;;;;;;;;;;;;;;;;;;;;;;;;;;;6175:22;;;;:9;:22;;;;;:31;;;6209:3;-1:-1:-1;6153:136:3;;;;-1:-1:-1;;;6153:136:3;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;6339:22;6364;;;:9;:22;;;;;;;;6397:10;;;:22;;;6430:11;;;:18;;-1:-1:-1;;6430:18:3;;;;;;;6459:5;;6486:7;;;;6459:35;;-1:-1:-1;;;6459:35:3;;6474:10;6459:35;;;;;;;;;;;;;6364:22;;-1:-1:-1;;;;;6459:5:3;;;;:14;;:35;;;;;6364:22;;6459:35;;;;;;;;:5;:35;;;5:2:-1;;;;30:1;27;20:12;5:2;6459:35:3;;;;8:9:-1;5:2;;;45:16;42:1;39;24:38;77:16;74:1;67:27;5:2;6459:35:3;;;;;;;13:2:-1;8:3;5:11;2:2;;;29:1;26;19:12;2:2;-1:-1;;6510:30:3;;6528:11;;6510:30;;;;;-1:-1:-1;6558:4:3;;5477:1093;-1:-1:-1;;;5477:1093:3:o;3278:1849::-;3450:18;3543:1;3534:6;:10;3526:47;;;;;-1:-1:-1;;;3526:47:3;;;;;;;;;;;;;;;;;;;;;;;;;;;;3604:3;3592:9;:15;3584:63;;;;-1:-1:-1;;;3584:63:3;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;3718:206;3774:10;3803:12;3834:6;3859:11;3889:9;3739:174;;;;;;-1:-1:-1;;;;;3739:174:3;-1:-1:-1;;;;;3739:174:3;;;;;;;;-1:-1:-1;;;;;3739:174:3;-1:-1:-1;;;;;3739:174:3;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;49:4:-1;39:7;30;26:21;22:32;13:7;6:49;3739:174:3;;;3718:206;;;;;;;;;;;;;36:153:-1;66:2;61:3;58:11;36:153;;176:10;;164:23;;-1:-1;;139:12;;;;98:2;89:12;;;;114;36:153;;;299:10;344;;263:2;259:12;;;254:3;250:22;-1:-1;;246:30;311:9;;295:26;;;340:21;;377:20;365:33;;3718:206:3;;;;;;;-1:-1:-1;263:2;;-1:-1;;3718:206:3;;;;;;;;8:9:-1;5:2;;;45:16;42:1;39;24:38;77:16;74:1;67:27;5:2;3718:206:3;;;;;;13:2:-1;8:3;5:11;2:2;;;29:1;26;19:12;2:2;-1:-1;3718:206:3;;-1:-1:-1;3998:24:3;3718:206;3998:12;:24::i;:::-;3994:66;;;4024:36;;;-1:-1:-1;;;4024:36:3;;;;;;;;;;;;;;;;;;;;;;;;;;;3994:66;4433:5;;;:52;;;-1:-1:-1;;;4433:52:3;;4452:10;4433:52;;;;-1:-1:-1;;;;;4433:52:3;;;;;;;;;;;;;;;:5;;;;;:18;;:52;;;;;;;;;;;;;;;;;;:5;:52;;;5:2:-1;;;;30:1;27;20:12;5:2;4433:52:3;;;;8:9:-1;5:2;;;45:16;42:1;39;24:38;77:16;74:1;67:27;5:2;4433:52:3;;;;;;;13:2:-1;8:3;5:11;2:2;;;29:1;26;19:12;2:2;-1:-1;4433:52:3;4428:116;;4500:44;;-1:-1:-1;;;4500:44:3;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;4428:116;4557:11;:31;;-1:-1:-1;;;;4557:31:3;-1:-1:-1;;;4557:31:3;;;4665:227;;;;;;;;;4692:10;4665:227;;;-1:-1:-1;;;;;4665:227:3;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;4641:21;;;-1:-1:-1;4641:21:3;;;;;;;;:251;;;;;;;-1:-1:-1;;;;;;4641:251:3;;;;;;;;;;;;;;;;;;;;;;;;;;;;;4571:17;4641:251;;;;;;;;;;;;;;;;;;;;;;;;;;;;-1:-1:-1;;4641:251:3;;;-1:-1:-1;;4641:251:3;;;;;;;;;;;;;;;;;;;;;4939:180;;4665:227;;;;5098:10;:8;:10::i;:::-;4939:180;;;-1:-1:-1;;;;;4939:180:3;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;3278:1849;;;;;;:::o;8974:397::-;9021:19;9123:5;:30;;;-1:-1:-1;;;9123:30:3;;9147:4;9123:30;;;;;;9043:9;;;;-1:-1:-1;;;;;9123:5:3;;;;:15;;:30;;;;;;;;;;;;;;;:5;:30;;;5:2:-1;;;;30:1;27;20:12;5:2;9123:30:3;;;;8:9:-1;5:2;;;45:16;42:1;39;24:38;77:16;74:1;67:27;5:2;9123:30:3;;;;;;;13:2:-1;8:3;5:11;2:2;;;29:1;26;19:12;2:2;-1:-1;9123:30:3;:45;;9115:54;;;;;;9220:5;;;:39;;;-1:-1:-1;;;9220:39:3;;9235:10;9220:39;;;;;;;;;;;;-1:-1:-1;;;;;9220:5:3;;;;:14;;:39;;;;;;;;;;;;;;;;;:5;:39;;;5:2:-1;;;;30:1;27;20:12;5:2;9220:39:3;;;;8:9:-1;5:2;;;45:16;42:1;39;24:38;77:16;74:1;67:27;5:2;9220:39:3;;;;;;;13:2:-1;8:3;5:11;2:2;;;29:1;26;19:12;2:2;-1:-1;;9343:5:3;;9306:57;;;9323:10;9306:57;;-1:-1:-1;;;;;9343:5:3;;;9220:39;9306:57;;;;;;;;;;;;;;;;;;;8974:397;:::o;748:18::-;;;-1:-1:-1;;;;;748:18:3;;:::o;9505:184::-;9598:11;9637:22;;;:9;:22;;;;;:29;-1:-1:-1;;;;;9637:29:3;:43;;;9505:184::o;8823:98::-;8866:7;8901:11;;-1:-1:-1;;;8901:11:3;;;;8893:20;;;;;;;;8886:27;;8823:98;:::o",
   "source": "pragma solidity >=0.4.22 <0.7.0;\r\n\r\n//impiort the token contract\r\nimport \"./Token.sol\";\r\n\r\n/**\r\n@title Source Chain Contract.\r\nThis contract provide a way to generate an exit proof. \r\nProtocol:\r\n1) exitTransaction (asset, burnaddress, hashlock, timelock)\r\n    A sender calls this to burn his asset to a burn address which creatas\r\n    an transfer proof for a given asset, and returneds a 32 byte transaction recept.\r\n    - Transaction is timelocked for a given time.\r\n    - A preimage of a secret code hash is added.\r\n2) reclaimTransaction ()\r\n    After timelock has expired and if the receiver did not withdraw the asset\r\n    the sender can get their asset back with this function.\r\n\r\n*/\r\n\r\ncontract SourceChain {\r\n    //defin the paramaters\r\n    Token public token; // instance of the token contract\r\n\r\n    //string secretKey; //Secret code\r\n    //address burnAddress; //Burn address\r\n    //uint timeLock; //time lock\r\n\r\n    struct LockContract {\r\n        address sender;\r\n        address receiver;\r\n        uint256 asset;\r\n        bytes32 secretCode;\r\n        uint256 timelock;\r\n        bool withdrawn;\r\n        bool refunded;\r\n        bytes32 preimage;\r\n    }\r\n\r\n    enum AssetStatus {_true, _false, _burn}\r\n    AssetStatus assetStatus;\r\n    AssetStatus constant defaultChoice = AssetStatus._true;\r\n\r\n    modifier contractExists(bytes32 _contractId) {\r\n        require(haveContract(_contractId), \"contractId does not exist\");\r\n        _;\r\n    }\r\n\r\n    modifier withdrawable(bytes32 _contractId) {\r\n        require(\r\n            contracts[_contractId].receiver == msg.sender,\r\n            \"withdrawable: not receiver\"\r\n        );\r\n        require(\r\n            contracts[_contractId].withdrawn == false,\r\n            \"withdrawable: already withdrawn\"\r\n        );\r\n        // if we want to disallow claim to be made after the timeout, uncomment the following line\r\n        // require(contracts[_contractId].timelock > now, \"withdrawable: timelock time must be in the future\");\r\n        _;\r\n    }\r\n    mapping(bytes32 => LockContract) contracts;\r\n\r\n    //events\r\n    //event TokenBurned(address account_from, address address_to, uint unit_token);\r\n    event event_exitTransaction(\r\n        address account_from,\r\n        address address_to,\r\n        uint256 unit_token,\r\n        bytes32 _secretCode,\r\n        uint256 _timelock,\r\n        uint256 _assetStatus\r\n    ); //asset status 'true','false' or 'burn'\r\n    event HTLCERC20Withdraw(bytes32 indexed contractId);\r\n    event HTLCERC20Refund(bytes32 indexed contractId);\r\n    event event_tokensSold(\r\n        address account_from, address account_to,\r\n        uint256 unit_token\r\n    );\r\n\r\n    // transfer the tokens from token contract\r\n    constructor(Token _token) public {\r\n        token = _token;\r\n    }\r\n\r\n    /**\r\n     * @dev Sender sets up the hash timelock burn contract.\r\n     *\r\n     * NOTE: sender must first call the approve() function on the token contract.\r\n     *\r\n     * @param _asset asset to be burned.\r\n     * @param _burnAddress Burn Address.\r\n     * @param _secretCode A sha-2 sha256 hash hashlock.\r\n     * @param _timelock UNIX epoch seconds time that the lock expires at.\r\n     *        Reclaim can be made after this time.\r\n     *\r\n     * @return Tx_receipt - Transaction receipt.\r\n     *\r\n     */\r\n    function exitTransaction(\r\n        uint256 _asset,\r\n        address _burnAddress,\r\n        bytes32 _secretCode,\r\n        uint256 _timelock\r\n    ) external payable returns (bytes32 contractId) {\r\n        \r\n        // check the requirements\r\n        require(_asset > 0, \"asset amount must be > 0\");\r\n        require(_timelock > now, \"timelock time must be in the future\");\r\n        \r\n        //Generate a Transaction ID\r\n        contractId = sha256(\r\n            abi.encodePacked(\r\n                msg.sender,\r\n                _burnAddress,\r\n                _asset,\r\n                _secretCode,\r\n                _timelock\r\n            )\r\n        );\r\n\r\n        // Reject if that Transaction ID already exists\r\n        if (haveContract(contractId)) revert(\"Transaction already exists\");\r\n\r\n        // burn function using openzeppelin library - check this out later....\r\n        // https://medium.com/crowdbotics/how-to-create-a-burnable-token-with-solidity-and-openzeppelin-library-38bd3249d0c7\r\n        // function burn(uint256 _value) public {\r\n        //  _burn(msg.sender, _value);\r\n        //}\r\n\r\n        // Burn the token to burn address\r\n        if (!token.transferFrom(msg.sender, _burnAddress, _asset))\r\n            revert(\"transferFrom sender to this failed\");\r\n\r\n        assetStatus = AssetStatus._burn;\r\n\r\n        // Update the Transaction data\r\n        contracts[contractId] = LockContract(\r\n            msg.sender,\r\n            _burnAddress,\r\n            _asset,\r\n            _secretCode,\r\n            _timelock,\r\n            false, //withdrawn\r\n            false, //refunded\r\n            0x0\r\n        );\r\n\r\n        //transaction event\r\n        emit event_exitTransaction(\r\n            msg.sender,\r\n            _burnAddress,\r\n            _asset,\r\n            _secretCode,\r\n            _timelock,\r\n            getValue()\r\n        );\r\n    }\r\n\r\n    /**\r\n     * @dev Called by the receiver once they know the preimage of the hashlock.\r\n     * This will transfer ownership of the locked tokens to their address.\r\n     *\r\n     * @param _contractId Id of the HTLC.\r\n     * @param _preimage sha256(_preimage) should equal the contract hashlock.\r\n     * @return bool true on success\r\n     */\r\n    function entryTransaction(bytes32 _contractId, bytes32 _preimage)\r\n        external\r\n        payable\r\n        returns (bool)\r\n    {\r\n        // check the requirements\r\n        require(haveContract(_contractId), \"contractId does not exist\");\r\n        require(\r\n            contracts[_contractId].secretCode == sha256(abi.encodePacked(_preimage)),\r\n            \"hashlock hash does not match\"\r\n        );\r\n        require(\r\n            contracts[_contractId].receiver == msg.sender,\r\n            \"withdrawable: not receiver\"\r\n        );\r\n        require(\r\n            contracts[_contractId].withdrawn == false,\r\n            \"withdrawable: already withdrawn\"\r\n        );\r\n        require(\r\n            contracts[_contractId].timelock > now,\r\n            \"withdrawable: timelock time must be in the future\"\r\n        );\r\n\r\n        // get the transaction data\r\n        LockContract storage c = contracts[_contractId];\r\n        c.preimage = _preimage;\r\n        c.withdrawn = true;\r\n        token.transfer(msg.sender, c.asset);\r\n        emit HTLCERC20Withdraw(_contractId);\r\n        return true;\r\n    }\r\n\r\n\r\n    /**\r\n     * @dev Called by the receiver once they know the preimage of the hashlock.\r\n     * This will transfer ownership of the locked tokens to their address.\r\n     *\r\n     * @param _contractId Id of the HTLC.\r\n     * @param _preimage sha256(_preimage) should equal the contract hashlock.\r\n     * @return bool true on success\r\n     */\r\n    function reclaimTransaction(bytes32 _contractId, bytes32 _preimage)\r\n        external\r\n        payable\r\n        returns (bool)\r\n    {\r\n        // check the requirements\r\n        require(haveContract(_contractId), \"contractId does not exist\");\r\n        require(\r\n            contracts[_contractId].secretCode == sha256(abi.encodePacked(_preimage)),\r\n            \"hashlock hash does not match\"\r\n        );\r\n        require(\r\n            contracts[_contractId].receiver == msg.sender,\r\n            \"withdrawable: not receiver\"\r\n        );\r\n        require(\r\n            contracts[_contractId].withdrawn == false,\r\n            \"withdrawable: already withdrawn\"\r\n        );\r\n        require(\r\n            contracts[_contractId].timelock > now,\r\n            \"withdrawable: timelock time must be in the future\"\r\n        );\r\n\r\n        // get the transaction data\r\n        LockContract storage c = contracts[_contractId];\r\n        c.preimage = _preimage;\r\n        c.withdrawn = true;\r\n        token.transfer(msg.sender, c.asset);\r\n        emit HTLCERC20Withdraw(_contractId);\r\n        return true;\r\n    }\r\n\r\n\r\n    function exportVerifier() public pure returns (bool results) {\r\n        //if (spendVerifier() and assetVerifier()) is true\r\n        //return true\r\n        //else\r\n        return true;\r\n    }\r\n\r\n    function spendVerifier() public pure returns (bool results) {\r\n        //check the signature\r\n        // chck the address is generted from the given public key\r\n        return true;\r\n    }\r\n\r\n    function assetVerifier() public pure returns (bool results) {\r\n        //check the asset validity\r\n        return true;\r\n    }\r\n\r\n  \r\n    function reclaimVerifier() public pure returns (bool results) {\r\n        // if (spendVerifier() and proofVerifier()) is true then\r\n        return true;\r\n    }\r\n\r\n    function proofVerifier() public pure returns (bool results) {\r\n        return true;\r\n    }\r\n\r\n    function getValue() internal view returns (uint256) {\r\n        return uint256(assetStatus);\r\n    }\r\n\r\n    // sendre buy a Token form the contract\r\n    function buyTokens() public payable {\r\n        uint256 tokenAmount = msg.value;\r\n        // Require that contract has enough tokens\r\n        require(token.balanceOf(address(this)) >= tokenAmount);\r\n        // Transfer tokens to the user\r\n        token.transfer(msg.sender, tokenAmount);\r\n        //token purchin event\r\n        emit event_tokensSold(msg.sender, address(token), tokenAmount);\r\n    }\r\n\r\n    /**\r\n     * @dev Is there a contract with id _contractId.\r\n     * @param _contractId Id into contracts mapping.\r\n     */\r\n    function haveContract(bytes32 _contractId)\r\n        internal\r\n        view\r\n        returns (bool exists)\r\n    {\r\n        exists = (contracts[_contractId].sender != address(0));\r\n    }\r\n}\r\n",
   "sourcePath": "C:\\_ethereum\\burn-to-claim\\contracts\\SourceChain.sol",
+=======
+  "metadata": "{\"compiler\":{\"version\":\"0.5.16+commit.9c3226ce\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"inputs\":[{\"internalType\":\"contract Token\",\"name\":\"_token\",\"type\":\"address\"}],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"constructor\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":false,\"internalType\":\"address\",\"name\":\"account_from\",\"type\":\"address\"},{\"indexed\":false,\"internalType\":\"address\",\"name\":\"address_to\",\"type\":\"address\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"unit_token\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"bytes32\",\"name\":\"_secretCode\",\"type\":\"bytes32\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"_timelock\",\"type\":\"uint256\"}],\"name\":\"event_exitTransaction\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":false,\"internalType\":\"address\",\"name\":\"account_from\",\"type\":\"address\"},{\"indexed\":false,\"internalType\":\"address\",\"name\":\"address_to\",\"type\":\"address\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"unit_token\",\"type\":\"uint256\"}],\"name\":\"event_tokensSold\",\"type\":\"event\"},{\"constant\":true,\"inputs\":[],\"name\":\"assetVerifier\",\"outputs\":[{\"internalType\":\"bool\",\"name\":\"results\",\"type\":\"bool\"}],\"payable\":false,\"stateMutability\":\"pure\",\"type\":\"function\"},{\"constant\":false,\"inputs\":[],\"name\":\"buyTokens\",\"outputs\":[],\"payable\":true,\"stateMutability\":\"payable\",\"type\":\"function\"},{\"constant\":false,\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"_asset\",\"type\":\"uint256\"},{\"internalType\":\"address\",\"name\":\"_burnAddress\",\"type\":\"address\"},{\"internalType\":\"bytes32\",\"name\":\"_secretCode\",\"type\":\"bytes32\"},{\"internalType\":\"uint256\",\"name\":\"_timelock\",\"type\":\"uint256\"}],\"name\":\"exitTransaction\",\"outputs\":[{\"internalType\":\"bytes32\",\"name\":\"Tx_receipt\",\"type\":\"bytes32\"}],\"payable\":true,\"stateMutability\":\"payable\",\"type\":\"function\"},{\"constant\":true,\"inputs\":[],\"name\":\"exportVerifier\",\"outputs\":[{\"internalType\":\"bool\",\"name\":\"results\",\"type\":\"bool\"}],\"payable\":false,\"stateMutability\":\"pure\",\"type\":\"function\"},{\"constant\":true,\"inputs\":[],\"name\":\"proofVerifier\",\"outputs\":[{\"internalType\":\"bool\",\"name\":\"results\",\"type\":\"bool\"}],\"payable\":false,\"stateMutability\":\"pure\",\"type\":\"function\"},{\"constant\":false,\"inputs\":[],\"name\":\"reclaimTransaction\",\"outputs\":[],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"constant\":true,\"inputs\":[],\"name\":\"reclaimVerifier\",\"outputs\":[{\"internalType\":\"bool\",\"name\":\"results\",\"type\":\"bool\"}],\"payable\":false,\"stateMutability\":\"pure\",\"type\":\"function\"},{\"constant\":true,\"inputs\":[],\"name\":\"spendVerifier\",\"outputs\":[{\"internalType\":\"bool\",\"name\":\"results\",\"type\":\"bool\"}],\"payable\":false,\"stateMutability\":\"pure\",\"type\":\"function\"},{\"constant\":true,\"inputs\":[],\"name\":\"token\",\"outputs\":[{\"internalType\":\"contract Token\",\"name\":\"\",\"type\":\"address\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"}],\"devdoc\":{\"methods\":{\"exitTransaction(uint256,address,bytes32,uint256)\":{\"details\":\"Sender sets up the hash time lock burn contract. NOTE: sender must first call the approve() function on the token contract.\",\"params\":{\"_asset\":\"asset to be burned.\",\"_burnAddress\":\"Burn Address.\",\"_secretCode\":\"A sha-2 sha256 hash hashlock.\",\"_timelock\":\"UNIX epoch seconds time that the lock expires at. Reclaim can be made after this time.\"},\"return\":\"contractId Id of the new HTLC. This is needed for subsequent calls.\"}},\"title\":\"Source Chain Contract. This contract provide a way to generate an exit proof.  Protocol: 1) exitTransaction (asset, burnaddress, hashlock, timelock) A sender calls this to burn his asset to a burn address which creatas an transfer proof for a given asset, and returneds a 32 byte transaction recept. - Transaction is timelocked for a given time. - A preimage of a secret code hash is added. 2) reclaimTransaction () After timelock has expired and if the receiver did not withdraw the asset the sender can get their asset back with this function.\"},\"userdoc\":{\"methods\":{}}},\"settings\":{\"compilationTarget\":{\"/C/Users/Paul/Documents/GitHub/burn-to-claim/contracts/SourceChain.sol\":\"SourceChain\"},\"evmVersion\":\"petersburg\",\"libraries\":{},\"optimizer\":{\"enabled\":true,\"runs\":200},\"remappings\":[]},\"sources\":{\"/C/Users/Paul/Documents/GitHub/burn-to-claim/contracts/SourceChain.sol\":{\"keccak256\":\"0x8895b778901b78015bf8203bf9fcbd0868bd754a9d00b10f1120cd9866384215\",\"urls\":[\"bzz-raw://914d3be3e4f45fd6323c8fecf8024d0cecb0b52c5215b668f4d2a9dd8f0ba2c3\",\"dweb:/ipfs/QmZBBPqmLjmFNTf4Jqqo6ZWkxW2G5GAzemK5ttH9yUmkmH\"]},\"/C/Users/Paul/Documents/GitHub/burn-to-claim/contracts/Token.sol\":{\"keccak256\":\"0xec2a39d40baae0f185014be6e9346acdd976de1a710e367c3718702002a0e2ce\",\"urls\":[\"bzz-raw://031c4c7737d65d976a02e652787ce76942d62c8f17dcc0c0770d2368c2d5fee5\",\"dweb:/ipfs/Qmb6L1HE2QJwv1SmC5XTpkrELTdVrkBG7XMcMbhFKfkLV5\"]}},\"version\":1}",
+  "bytecode": "0x608060405234801561001057600080fd5b506040516106fd3803806106fd8339818101604052602081101561003357600080fd5b5051600080546001600160a01b039092166001600160a01b0319909216919091179055610698806100656000396000f3fe6080604052600436106100865760003560e01c806396cbc43a1161005957806396cbc43a1461008b5780639e8de3ed1461008b578063d0febe4c14610115578063facc39431461008b578063fc0c546a1461011d57610086565b806316829b921461008b57806348496d10146100b45780637fa417b31461008b578063838d1ac4146100cb575b600080fd5b34801561009757600080fd5b506100a061014e565b604080519115158252519081900360200190f35b3480156100c057600080fd5b506100c9610153565b005b610103600480360360808110156100e157600080fd5b508035906001600160a01b036020820135169060408101359060600135610155565b60408051918252519081900360200190f35b6100c961049d565b34801561012957600080fd5b506101326105f2565b604080516001600160a01b039092168252519081900360200190f35b600190565b565b6000814281116101965760405162461bcd60e51b815260040180806020018281038252602381526020018061061f6023913960400191505060405180910390fd5b6002338688878760405160200180866001600160a01b03166001600160a01b031660601b8152601401856001600160a01b03166001600160a01b031660601b8152601401848152602001838152602001828152602001955050505050506040516020818303038152906040526040518082805190602001908083835b602083106102315780518252601f199092019160209182019101610212565b51815160209384036101000a60001901801990921691161790526040519190930194509192505080830381855afa158015610270573d6000803e3d6000fd5b5050506040513d602081101561028557600080fd5b5051915061029282610601565b156102e4576040805162461bcd60e51b815260206004820152601a60248201527f5472616e73616374696f6e20616c726561647920657869737473000000000000604482015290519081900360640190fd5b60008054604080516323b872dd60e01b81523360048201526001600160a01b038981166024830152604482018b9052915191909216926323b872dd92606480820193602093909283900390910190829087803b15801561034357600080fd5b505af1158015610357573d6000803e3d6000fd5b505050506040513d602081101561036d57600080fd5b50516103aa5760405162461bcd60e51b81526004018080602001828103825260228152602001806106426022913960400191505060405180910390fd5b600080546001919060ff60a01b1916600160a01b8302179055506040805160a08082018352338083526001600160a01b0389811660208086018281528688018e815260608089018e81526080808b018f815260008f81526001808952908e90209c518d54908b166001600160a01b0319918216178e559651908d01805491909a16961695909517909755915160028a015590516003890155905160049097019690965586519384528301528185018b905292810188905291820186905291517f2e9957a3cd9840c366f2861a9817b1cf1cb886f97a9ccbbda01c1a7889cbc745929181900390910190a150949350505050565b600054604080516370a0823160e01b81523060048201529051349283926001600160a01b03909116916370a0823191602480820192602092909190829003018186803b1580156104ec57600080fd5b505afa158015610500573d6000803e3d6000fd5b505050506040513d602081101561051657600080fd5b5051101561052357600080fd5b600080546040805163a9059cbb60e01b81523360048201526024810185905290516001600160a01b039092169263a9059cbb926044808401936020939083900390910190829087803b15801561057857600080fd5b505af115801561058c573d6000803e3d6000fd5b505050506040513d60208110156105a257600080fd5b5050600054604080513381526001600160a01b039092166020830152818101839052517f7007bc29a103fd08e84c31c574ced1767c37dc3a8450bee57025a64d1750eaf39181900360600190a150565b6000546001600160a01b031681565b6000908152600160205260409020546001600160a01b031615159056fe74696d656c6f636b2074696d65206d75737420626520696e20746865206675747572657472616e7366657246726f6d2073656e64657220746f2074686973206661696c6564a265627a7a72315820cdfbe4ab9d1dbed8026eadf57115506c4313a9d31042d33a810dc9d5e454d05e64736f6c63430005100032",
+  "deployedBytecode": "0x6080604052600436106100865760003560e01c806396cbc43a1161005957806396cbc43a1461008b5780639e8de3ed1461008b578063d0febe4c14610115578063facc39431461008b578063fc0c546a1461011d57610086565b806316829b921461008b57806348496d10146100b45780637fa417b31461008b578063838d1ac4146100cb575b600080fd5b34801561009757600080fd5b506100a061014e565b604080519115158252519081900360200190f35b3480156100c057600080fd5b506100c9610153565b005b610103600480360360808110156100e157600080fd5b508035906001600160a01b036020820135169060408101359060600135610155565b60408051918252519081900360200190f35b6100c961049d565b34801561012957600080fd5b506101326105f2565b604080516001600160a01b039092168252519081900360200190f35b600190565b565b6000814281116101965760405162461bcd60e51b815260040180806020018281038252602381526020018061061f6023913960400191505060405180910390fd5b6002338688878760405160200180866001600160a01b03166001600160a01b031660601b8152601401856001600160a01b03166001600160a01b031660601b8152601401848152602001838152602001828152602001955050505050506040516020818303038152906040526040518082805190602001908083835b602083106102315780518252601f199092019160209182019101610212565b51815160209384036101000a60001901801990921691161790526040519190930194509192505080830381855afa158015610270573d6000803e3d6000fd5b5050506040513d602081101561028557600080fd5b5051915061029282610601565b156102e4576040805162461bcd60e51b815260206004820152601a60248201527f5472616e73616374696f6e20616c726561647920657869737473000000000000604482015290519081900360640190fd5b60008054604080516323b872dd60e01b81523360048201526001600160a01b038981166024830152604482018b9052915191909216926323b872dd92606480820193602093909283900390910190829087803b15801561034357600080fd5b505af1158015610357573d6000803e3d6000fd5b505050506040513d602081101561036d57600080fd5b50516103aa5760405162461bcd60e51b81526004018080602001828103825260228152602001806106426022913960400191505060405180910390fd5b600080546001919060ff60a01b1916600160a01b8302179055506040805160a08082018352338083526001600160a01b0389811660208086018281528688018e815260608089018e81526080808b018f815260008f81526001808952908e90209c518d54908b166001600160a01b0319918216178e559651908d01805491909a16961695909517909755915160028a015590516003890155905160049097019690965586519384528301528185018b905292810188905291820186905291517f2e9957a3cd9840c366f2861a9817b1cf1cb886f97a9ccbbda01c1a7889cbc745929181900390910190a150949350505050565b600054604080516370a0823160e01b81523060048201529051349283926001600160a01b03909116916370a0823191602480820192602092909190829003018186803b1580156104ec57600080fd5b505afa158015610500573d6000803e3d6000fd5b505050506040513d602081101561051657600080fd5b5051101561052357600080fd5b600080546040805163a9059cbb60e01b81523360048201526024810185905290516001600160a01b039092169263a9059cbb926044808401936020939083900390910190829087803b15801561057857600080fd5b505af115801561058c573d6000803e3d6000fd5b505050506040513d60208110156105a257600080fd5b5050600054604080513381526001600160a01b039092166020830152818101839052517f7007bc29a103fd08e84c31c574ced1767c37dc3a8450bee57025a64d1750eaf39181900360600190a150565b6000546001600160a01b031681565b6000908152600160205260409020546001600160a01b031615159056fe74696d656c6f636b2074696d65206d75737420626520696e20746865206675747572657472616e7366657246726f6d2073656e64657220746f2074686973206661696c6564a265627a7a72315820cdfbe4ab9d1dbed8026eadf57115506c4313a9d31042d33a810dc9d5e454d05e64736f6c63430005100032",
+  "sourceMap": "692:4071:2:-;;;1778:59;8:9:-1;5:2;;;30:1;27;20:12;5:2;1778:59:2;;;;;;;;;;;;;;;13:2:-1;8:3;5:11;2:2;;;29:1;26;19:12;2:2;-1:-1;1778:59:2;1819:5;:14;;-1:-1:-1;;;;;1819:14:2;;;-1:-1:-1;;;;;;1819:14:2;;;;;;;;;692:4071;;;;;;",
+  "deployedSourceMap": "692:4071:2:-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;3840:143;;8:9:-1;5:2;;;30:1;27;20:12;5:2;3840:143:2;;;:::i;:::-;;;;;;;;;;;;;;;;;;3608:228;;8:9:-1;5:2;;;30:1;27;20:12;5:2;3608:228:2;;;:::i;:::-;;2295:807;;;;;;13:3:-1;8;5:12;2:2;;;30:1;27;20:12;2:2;-1:-1;2295:807:2;;;-1:-1:-1;;;;;2295:807:2;;;;;;;;;;;;;;;:::i;:::-;;;;;;;;;;;;;;;;4109:358;;;:::i;742:18::-;;8:9:-1;5:2;;;30:1;27;20:12;5:2;742:18:2;;;:::i;:::-;;;;-1:-1:-1;;;;;742:18:2;;;;;;;;;;;;;;3840:143;3975:4;3840:143;:::o;3608:228::-;:::o;2295:807::-;2448:18;2428:9;1320:3;1312:5;:11;1304:59;;;;-1:-1:-1;;;1304:59:2;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;2486:83;2511:10;2523:12;2537:6;2545:11;2558:9;2493:75;;;;;;-1:-1:-1;;;;;2493:75:2;-1:-1:-1;;;;;2493:75:2;;;;;;;;-1:-1:-1;;;;;2493:75:2;-1:-1:-1;;;;;2493:75:2;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;49:4:-1;39:7;30;26:21;22:32;13:7;6:49;2493:75:2;;;2486:83;;;;;;;;;;;;;36:153:-1;66:2;61:3;58:11;36:153;;176:10;;164:23;;-1:-1;;139:12;;;;98:2;89:12;;;;114;36:153;;;299:10;344;;263:2;259:12;;;254:3;250:22;-1:-1;;246:30;311:9;;295:26;;;340:21;;377:20;365:33;;2486:83:2;;;;;;;-1:-1:-1;263:2;;-1:-1;;2486:83:2;;;;;;;;8:9:-1;5:2;;;45:16;42:1;39;24:38;77:16;74:1;67:27;5:2;2486:83:2;;;;;;13:2:-1;8:3;5:11;2:2;;;29:1;26;19:12;2:2;-1:-1;2486:83:2;;-1:-1:-1;2621:27:2;2486:83;2621:15;:27::i;:::-;2617:69;;;2650:36;;;-1:-1:-1;;;2650:36:2;;;;;;;;;;;;;;;;;;;;;;;;;;;2617:69;2731:5;;;:52;;;-1:-1:-1;;;2731:52:2;;2750:10;2731:52;;;;-1:-1:-1;;;;;2731:52:2;;;;;;;;;;;;;;;:5;;;;;:18;;:52;;;;;;;;;;;;;;;;;;:5;:52;;;5:2:-1;;;;30:1;27;20:12;5:2;2731:52:2;;;;8:9:-1;5:2;;;45:16;42:1;39;24:38;77:16;74:1;67:27;5:2;2731:52:2;;;;;;;13:2:-1;8:3;5:11;2:2;;;29:1;26;19:12;2:2;-1:-1;2731:52:2;2726:103;;2785:44;;-1:-1:-1;;;2785:44:2;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;2726:103;2834:11;:32;;2848:18;;2834:11;-1:-1:-1;;;;2834:32:2;-1:-1:-1;;;2848:18:2;2834:32;;;;-1:-1:-1;2915:71:2;;;;;;;;;2929:10;2915:71;;;-1:-1:-1;;;;;2915:71:2;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;-1:-1:-1;2890:22:2;;;:10;:22;;;;;;;:96;;;;;;;-1:-1:-1;;;;;;2890:96:2;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;3017:79;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;2295:807;;;;;;;:::o;4109:358::-;4151:16;4242:5;:30;;;-1:-1:-1;;;4242:30:2;;4266:4;4242:30;;;;;;4170:9;;;;-1:-1:-1;;;;;4242:5:2;;;;:15;;:30;;;;;;;;;;;;;;;:5;:30;;;5:2:-1;;;;30:1;27;20:12;5:2;4242:30:2;;;;8:9:-1;5:2;;;45:16;42:1;39;24:38;77:16;74:1;67:27;5:2;4242:30:2;;;;;;;13:2:-1;8:3;5:11;2:2;;;29:1;26;19:12;2:2;-1:-1;4242:30:2;:45;;4234:54;;;;;;4330:5;;;:39;;;-1:-1:-1;;;4330:39:2;;4345:10;4330:39;;;;;;;;;;;;-1:-1:-1;;;;;4330:5:2;;;;:14;;:39;;;;;;;;;;;;;;;;;:5;:39;;;5:2:-1;;;;30:1;27;20:12;5:2;4330:39:2;;;;8:9:-1;5:2;;;45:16;42:1;39;24:38;77:16;74:1;67:27;5:2;4330:39:2;;;;;;;13:2:-1;8:3;5:11;2:2;;;29:1;26;19:12;2:2;-1:-1;;4444:5:2;;4408:55;;;4425:10;4408:55;;-1:-1:-1;;;;;4444:5:2;;;4330:39;4408:55;;;;;;;;;;;;;;;;;;;4109:358;:::o;742:18::-;;;-1:-1:-1;;;;;742:18:2;;:::o;4595:159::-;4666:11;4701:23;;;:10;:23;;;;;:30;-1:-1:-1;;;;;4701:30:2;:44;;;4595:159::o",
+  "source": "pragma solidity >=0.4.22 <0.7.0;\r\n\r\n//impiort the token contract\r\nimport \"./Token.sol\";\r\n\r\n/**\r\n@title Source Chain Contract.\r\nThis contract provide a way to generate an exit proof. \r\nProtocol:\r\n1) exitTransaction (asset, burnaddress, hashlock, timelock)\r\n    A sender calls this to burn his asset to a burn address which creatas\r\n    an transfer proof for a given asset, and returneds a 32 byte transaction recept.\r\n    - Transaction is timelocked for a given time.\r\n    - A preimage of a secret code hash is added.\r\n2) reclaimTransaction ()\r\n    After timelock has expired and if the receiver did not withdraw the asset\r\n    the sender can get their asset back with this function.\r\n\r\n*/\r\n\r\ncontract SourceChain {\r\n\r\n//defin the paramaters\r\nToken public token; // instance of the token contract\r\n\r\n//string secretKey; //Secret code\r\n//address burnAddress; //Burn address\r\n//uint timeLock; //time lock\r\n\r\nstruct LockAssetData {\r\n        address sender;\r\n        address burnAddress;\r\n        uint256 asset;\r\n        bytes32 secretCode;\r\n        uint256 timelock;\r\n    }\r\n\r\nenum AssetStatus {_true, _false, _burn}\r\nAssetStatus assetStatus;\r\nAssetStatus constant defaultChoice = AssetStatus._true;\r\n\r\n modifier futureTimelock(uint256 _time) {\r\n    // timelock time starts after theis blocktime (now).\r\n    require(_time > now, \"timelock time must be in the future\");\r\n    _; }\r\n\r\nmapping (bytes32 => LockAssetData) lockedData;\r\n\r\n//events\r\n//event TokenBurned(address account_from, address address_to, uint unit_token);\r\nevent event_exitTransaction(address account_from, address address_to, uint unit_token, bytes32 _secretCode, uint256 _timelock);\r\nevent event_tokensSold(address account_from, address address_to, uint unit_token);\r\n\r\n// transfer the tokens from token contract\r\nconstructor (Token _token) public {\r\n    token = _token;\r\n}\r\n \r\n/**\r\n@dev Sender sets up the hash time lock burn contract.\r\nNOTE: sender must first call the approve() function on the token contract.\r\n@param _burnAddress Burn Address.\r\n@param _secretCode A sha-2 sha256 hash hashlock.\r\n@param _timelock UNIX epoch seconds time that the lock expires at.\r\n        Reclaim can be made after this time.\r\n@param _asset asset to be burned.\r\n@return contractId Id of the new HTLC. This is needed for subsequent calls.\r\n*/\r\n\r\nfunction exitTransaction(uint _asset, address _burnAddress, bytes32 _secretCode, uint256 _timelock)\r\nexternal payable futureTimelock(_timelock) returns (bytes32 Tx_receipt) {\r\n\r\nTx_receipt = sha256(abi.encodePacked (msg.sender, _burnAddress, _asset, _secretCode, _timelock));\r\n\r\n// Reject if a Transaction already exists\r\nif (haveTransaction(Tx_receipt)) revert(\"Transaction already exists\");\r\n\r\n// burn the token to burn address\r\nif (!token.transferFrom(msg.sender, _burnAddress, _asset)) revert(\"transferFrom sender to this failed\");\r\n\r\nassetStatus = AssetStatus._false;\r\n\r\n// time lock data\r\nlockedData[Tx_receipt] = LockAssetData(msg.sender, _burnAddress, _asset, _secretCode, _timelock);\r\n\r\n//transaction event\r\nemit event_exitTransaction(msg.sender, _burnAddress, _asset, _secretCode, _timelock);\r\n\r\n}\r\n\r\nfunction exportVerifier() public pure returns (bool results){\r\n//if (spendVerifier() and assetVerifier()) is true\r\n//return true\r\n//else\r\nreturn true;\r\n}\r\n\r\nfunction spendVerifier() public pure returns (bool results){\r\n//check the signature\r\n// chck the address is generted from the given public key\r\n\r\nreturn true;\r\n}\r\n\r\nfunction assetVerifier() public pure returns (bool results){\r\n//check the asset validity\r\nreturn true;\r\n}\r\n\r\n// this function is to reclaim the asset\r\n// as per the algorithm 6\r\n\r\nfunction reclaimTransaction() external{\r\n//if reclaimVerifier() return true;\r\n// check the time lock period\r\n// require(now >= timeLock);\r\n// check the secret key\r\n// reclaim the token\r\n// token.transfer(to_address, _amount);\r\n}\r\n\r\nfunction reclaimVerifier() public pure returns (bool results){\r\n  // if (spendVerifier() and proofVerifier()) is true then\r\n    return true;\r\n}\r\n\r\nfunction proofVerifier() public pure returns (bool results){\r\nreturn true;\r\n}\r\n\r\n// sendre buy a Token form the contract\r\nfunction buyTokens() public payable{\r\n    uint tokenAmount = msg.value;\r\n    // Require that contract has enough tokens\r\n    require(token.balanceOf(address(this)) >= tokenAmount);\r\n   // Transfer tokens to the user\r\n    token.transfer(msg.sender, tokenAmount);\r\n    //token purchin event\r\n    emit event_tokensSold(msg.sender,address(token),tokenAmount);\r\n}\r\n/**\r\n     * @dev Is there a contract with id _contractId.\r\n     * @param _Tx_receipt Id into contracts mapping.\r\n     */\r\n    function haveTransaction(bytes32 _Tx_receipt)  internal view  returns (bool exists)  {\r\n        exists = (lockedData[_Tx_receipt].sender != address(0));\r\n    }\r\n\r\n\r\n\r\n}\r\n\r\n",
+  "sourcePath": "C:\\Users\\Paul\\Documents\\GitHub\\burn-to-claim\\contracts\\SourceChain.sol",
+>>>>>>> 4e6c441aaca33f01d17ea0f10c7bc98b478e7dad
   "ast": {
-    "absolutePath": "/C/_ethereum/burn-to-claim/contracts/SourceChain.sol",
+    "absolutePath": "/C/Users/Paul/Documents/GitHub/burn-to-claim/contracts/SourceChain.sol",
     "exportedSymbols": {
       "SourceChain": [
         598
@@ -327,7 +337,7 @@
         "src": "0:32:3"
       },
       {
-        "absolutePath": "/C/_ethereum/burn-to-claim/contracts/Token.sol",
+        "absolutePath": "/C/Users/Paul/Documents/GitHub/burn-to-claim/contracts/Token.sol",
         "file": "./Token.sol",
         "id": 90,
         "nodeType": "ImportDirective",
@@ -748,8 +758,13 @@
                           "name": "haveContract",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
+<<<<<<< HEAD
                           "referencedDeclaration": 597,
                           "src": "1373:12:3",
+=======
+                          "referencedDeclaration": 1043,
+                          "src": "1320:3:2",
+>>>>>>> 4e6c441aaca33f01d17ea0f10c7bc98b478e7dad
                           "typeDescriptions": {
                             "typeIdentifier": "t_function_internal_view$_t_bytes32_$returns$_t_bool_$",
                             "typeString": "function (bytes32) view returns (bool)"
@@ -803,11 +818,19 @@
                       "name": "require",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [
+<<<<<<< HEAD
                         797,
                         798
                       ],
                       "referencedDeclaration": 798,
                       "src": "1365:7:3",
+=======
+                        1044,
+                        1045
+                      ],
+                      "referencedDeclaration": 1045,
+                      "src": "1304:7:2",
+>>>>>>> 4e6c441aaca33f01d17ea0f10c7bc98b478e7dad
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_require_pure$_t_bool_$_t_string_memory_ptr_$returns$__$",
                         "typeString": "function (bool,string memory) pure"
@@ -2046,8 +2069,13 @@
                                 "name": "msg",
                                 "nodeType": "Identifier",
                                 "overloadedDeclarations": [],
+<<<<<<< HEAD
                                 "referencedDeclaration": 794,
                                 "src": "3774:3:3",
+=======
+                                "referencedDeclaration": 1041,
+                                "src": "2511:3:2",
+>>>>>>> 4e6c441aaca33f01d17ea0f10c7bc98b478e7dad
                                 "typeDescriptions": {
                                   "typeIdentifier": "t_magic_message",
                                   "typeString": "msg"
@@ -2149,8 +2177,13 @@
                               "name": "abi",
                               "nodeType": "Identifier",
                               "overloadedDeclarations": [],
+<<<<<<< HEAD
                               "referencedDeclaration": 781,
                               "src": "3739:3:3",
+=======
+                              "referencedDeclaration": 1028,
+                              "src": "2493:3:2",
+>>>>>>> 4e6c441aaca33f01d17ea0f10c7bc98b478e7dad
                               "typeDescriptions": {
                                 "typeIdentifier": "t_magic_abi",
                                 "typeString": "abi"
@@ -2196,8 +2229,13 @@
                         "name": "sha256",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
+<<<<<<< HEAD
                         "referencedDeclaration": 803,
                         "src": "3718:6:3",
+=======
+                        "referencedDeclaration": 1050,
+                        "src": "2486:6:2",
+>>>>>>> 4e6c441aaca33f01d17ea0f10c7bc98b478e7dad
                         "typeDescriptions": {
                           "typeIdentifier": "t_function_sha256_pure$_t_bytes_memory_ptr_$returns$_t_bytes32_$",
                           "typeString": "function (bytes memory) pure returns (bytes32)"
@@ -2315,11 +2353,19 @@
                         "name": "revert",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [
+<<<<<<< HEAD
                           799,
                           800
                         ],
                         "referencedDeclaration": 800,
                         "src": "4024:6:3",
+=======
+                          1046,
+                          1047
+                        ],
+                        "referencedDeclaration": 1047,
+                        "src": "2650:6:2",
+>>>>>>> 4e6c441aaca33f01d17ea0f10c7bc98b478e7dad
                         "typeDescriptions": {
                           "typeIdentifier": "t_function_revert_pure$_t_string_memory_ptr_$returns$__$",
                           "typeString": "function (string memory) pure"
@@ -2367,8 +2413,13 @@
                             "name": "msg",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
+<<<<<<< HEAD
                             "referencedDeclaration": 794,
                             "src": "4452:3:3",
+=======
+                            "referencedDeclaration": 1041,
+                            "src": "2750:3:2",
+>>>>>>> 4e6c441aaca33f01d17ea0f10c7bc98b478e7dad
                             "typeDescriptions": {
                               "typeIdentifier": "t_magic_message",
                               "typeString": "msg"
@@ -2514,11 +2565,19 @@
                         "name": "revert",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [
+<<<<<<< HEAD
                           799,
                           800
                         ],
                         "referencedDeclaration": 800,
                         "src": "4500:6:3",
+=======
+                          1046,
+                          1047
+                        ],
+                        "referencedDeclaration": 1047,
+                        "src": "2785:6:2",
+>>>>>>> 4e6c441aaca33f01d17ea0f10c7bc98b478e7dad
                         "typeDescriptions": {
                           "typeIdentifier": "t_function_revert_pure$_t_string_memory_ptr_$returns$__$",
                           "typeString": "function (string memory) pure"
@@ -2666,8 +2725,13 @@
                             "name": "msg",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
+<<<<<<< HEAD
                             "referencedDeclaration": 794,
                             "src": "4692:3:3",
+=======
+                            "referencedDeclaration": 1041,
+                            "src": "2929:3:2",
+>>>>>>> 4e6c441aaca33f01d17ea0f10c7bc98b478e7dad
                             "typeDescriptions": {
                               "typeIdentifier": "t_magic_message",
                               "typeString": "msg"
@@ -2876,8 +2940,13 @@
                           "name": "msg",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
+<<<<<<< HEAD
                           "referencedDeclaration": 794,
                           "src": "4975:3:3",
+=======
+                          "referencedDeclaration": 1041,
+                          "src": "3039:3:2",
+>>>>>>> 4e6c441aaca33f01d17ea0f10c7bc98b478e7dad
                           "typeDescriptions": {
                             "typeIdentifier": "t_magic_message",
                             "typeString": "msg"
@@ -3313,9 +3382,294 @@
                       "typeString": "tuple()"
                     }
                   },
+<<<<<<< HEAD
                   "id": 313,
                   "nodeType": "ExpressionStatement",
                   "src": "5653:63:3"
+=======
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "3473:14:2"
+            },
+            "scope": 337,
+            "src": "3428:105:2",
+            "stateMutability": "pure",
+            "superFunction": null,
+            "visibility": "public"
+          },
+          {
+            "body": {
+              "id": 262,
+              "nodeType": "Block",
+              "src": "3646:190:2",
+              "statements": []
+            },
+            "documentation": null,
+            "id": 263,
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [],
+            "name": "reclaimTransaction",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 260,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "3635:2:2"
+            },
+            "returnParameters": {
+              "id": 261,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "3646:0:2"
+            },
+            "scope": 337,
+            "src": "3608:228:2",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "external"
+          },
+          {
+            "body": {
+              "id": 270,
+              "nodeType": "Block",
+              "src": "3901:82:2",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "hexValue": "74727565",
+                    "id": 268,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": true,
+                    "kind": "bool",
+                    "lValueRequested": false,
+                    "nodeType": "Literal",
+                    "src": "3975:4:2",
+                    "subdenomination": null,
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bool",
+                      "typeString": "bool"
+                    },
+                    "value": "true"
+                  },
+                  "functionReturnParameters": 267,
+                  "id": 269,
+                  "nodeType": "Return",
+                  "src": "3968:11:2"
+                }
+              ]
+            },
+            "documentation": null,
+            "id": 271,
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [],
+            "name": "reclaimVerifier",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 264,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "3864:2:2"
+            },
+            "returnParameters": {
+              "id": 267,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 266,
+                  "name": "results",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 271,
+                  "src": "3888:12:2",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bool",
+                    "typeString": "bool"
+                  },
+                  "typeName": {
+                    "id": 265,
+                    "name": "bool",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "3888:4:2",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bool",
+                      "typeString": "bool"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "3887:14:2"
+            },
+            "scope": 337,
+            "src": "3840:143:2",
+            "stateMutability": "pure",
+            "superFunction": null,
+            "visibility": "public"
+          },
+          {
+            "body": {
+              "id": 278,
+              "nodeType": "Block",
+              "src": "4046:18:2",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "hexValue": "74727565",
+                    "id": 276,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": true,
+                    "kind": "bool",
+                    "lValueRequested": false,
+                    "nodeType": "Literal",
+                    "src": "4056:4:2",
+                    "subdenomination": null,
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bool",
+                      "typeString": "bool"
+                    },
+                    "value": "true"
+                  },
+                  "functionReturnParameters": 275,
+                  "id": 277,
+                  "nodeType": "Return",
+                  "src": "4049:11:2"
+                }
+              ]
+            },
+            "documentation": null,
+            "id": 279,
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [],
+            "name": "proofVerifier",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 272,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "4009:2:2"
+            },
+            "returnParameters": {
+              "id": 275,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 274,
+                  "name": "results",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 279,
+                  "src": "4033:12:2",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bool",
+                    "typeString": "bool"
+                  },
+                  "typeName": {
+                    "id": 273,
+                    "name": "bool",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "4033:4:2",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bool",
+                      "typeString": "bool"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "4032:14:2"
+            },
+            "scope": 337,
+            "src": "3987:77:2",
+            "stateMutability": "pure",
+            "superFunction": null,
+            "visibility": "public"
+          },
+          {
+            "body": {
+              "id": 315,
+              "nodeType": "Block",
+              "src": "4144:323:2",
+              "statements": [
+                {
+                  "assignments": [
+                    283
+                  ],
+                  "declarations": [
+                    {
+                      "constant": false,
+                      "id": 283,
+                      "name": "tokenAmount",
+                      "nodeType": "VariableDeclaration",
+                      "scope": 315,
+                      "src": "4151:16:2",
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_uint256",
+                        "typeString": "uint256"
+                      },
+                      "typeName": {
+                        "id": 282,
+                        "name": "uint",
+                        "nodeType": "ElementaryTypeName",
+                        "src": "4151:4:2",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        }
+                      },
+                      "value": null,
+                      "visibility": "internal"
+                    }
+                  ],
+                  "id": 286,
+                  "initialValue": {
+                    "argumentTypes": null,
+                    "expression": {
+                      "argumentTypes": null,
+                      "id": 284,
+                      "name": "msg",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 1041,
+                      "src": "4170:3:2",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_magic_message",
+                        "typeString": "msg"
+                      }
+                    },
+                    "id": 285,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "memberName": "value",
+                    "nodeType": "MemberAccess",
+                    "referencedDeclaration": null,
+                    "src": "4170:9:2",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "nodeType": "VariableDeclarationStatement",
+                  "src": "4151:28:2"
+>>>>>>> 4e6c441aaca33f01d17ea0f10c7bc98b478e7dad
                 },
                 {
                   "expression": {
@@ -3402,8 +3756,13 @@
                                   "name": "_preimage",
                                   "nodeType": "Identifier",
                                   "overloadedDeclarations": [],
+<<<<<<< HEAD
                                   "referencedDeclaration": 302,
                                   "src": "5810:9:3",
+=======
+                                  "referencedDeclaration": 1061,
+                                  "src": "4266:4:2",
+>>>>>>> 4e6c441aaca33f01d17ea0f10c7bc98b478e7dad
                                   "typeDescriptions": {
                                     "typeIdentifier": "t_bytes32",
                                     "typeString": "bytes32"
@@ -3531,11 +3890,19 @@
                       "name": "require",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [
+<<<<<<< HEAD
                         797,
                         798
                       ],
                       "referencedDeclaration": 798,
                       "src": "5727:7:3",
+=======
+                        1044,
+                        1045
+                      ],
+                      "referencedDeclaration": 1044,
+                      "src": "4234:7:2",
+>>>>>>> 4e6c441aaca33f01d17ea0f10c7bc98b478e7dad
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_require_pure$_t_bool_$_t_string_memory_ptr_$returns$__$",
                         "typeString": "function (bool,string memory) pure"
@@ -3565,9 +3932,24 @@
                     "arguments": [
                       {
                         "argumentTypes": null,
+<<<<<<< HEAD
                         "commonType": {
                           "typeIdentifier": "t_address",
                           "typeString": "address"
+=======
+                        "expression": {
+                          "argumentTypes": null,
+                          "id": 301,
+                          "name": "msg",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 1041,
+                          "src": "4345:3:2",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_magic_message",
+                            "typeString": "msg"
+                          }
+>>>>>>> 4e6c441aaca33f01d17ea0f10c7bc98b478e7dad
                         },
                         "id": 336,
                         "isConstant": false,
@@ -3735,9 +4117,24 @@
                     "arguments": [
                       {
                         "argumentTypes": null,
+<<<<<<< HEAD
                         "commonType": {
                           "typeIdentifier": "t_bool",
                           "typeString": "bool"
+=======
+                        "expression": {
+                          "argumentTypes": null,
+                          "id": 307,
+                          "name": "msg",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 1041,
+                          "src": "4425:3:2",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_magic_message",
+                            "typeString": "msg"
+                          }
+>>>>>>> 4e6c441aaca33f01d17ea0f10c7bc98b478e7dad
                         },
                         "id": 346,
                         "isConstant": false,
@@ -4245,9 +4642,134 @@
                       "typeString": "bool"
                     }
                   },
+<<<<<<< HEAD
                   "id": 377,
                   "nodeType": "ExpressionStatement",
                   "src": "6430:18:3"
+=======
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "4665:13:2"
+            },
+            "scope": 337,
+            "src": "4595:159:2",
+            "stateMutability": "view",
+            "superFunction": null,
+            "visibility": "internal"
+          }
+        ],
+        "scope": 338,
+        "src": "692:4071:2"
+      }
+    ],
+    "src": "0:4767:2"
+  },
+  "legacyAST": {
+    "absolutePath": "/C/Users/Paul/Documents/GitHub/burn-to-claim/contracts/SourceChain.sol",
+    "exportedSymbols": {
+      "SourceChain": [
+        337
+      ]
+    },
+    "id": 338,
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 85,
+        "literals": [
+          "solidity",
+          ">=",
+          "0.4",
+          ".22",
+          "<",
+          "0.7",
+          ".0"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "0:32:2"
+      },
+      {
+        "absolutePath": "/C/Users/Paul/Documents/GitHub/burn-to-claim/contracts/Token.sol",
+        "file": "./Token.sol",
+        "id": 86,
+        "nodeType": "ImportDirective",
+        "scope": 338,
+        "sourceUnit": 519,
+        "src": "66:21:2",
+        "symbolAliases": [],
+        "unitAlias": ""
+      },
+      {
+        "baseContracts": [],
+        "contractDependencies": [],
+        "contractKind": "contract",
+        "documentation": "@title Source Chain Contract.\nThis contract provide a way to generate an exit proof. \nProtocol:\n1) exitTransaction (asset, burnaddress, hashlock, timelock)\nA sender calls this to burn his asset to a burn address which creatas\nan transfer proof for a given asset, and returneds a 32 byte transaction recept.\n- Transaction is timelocked for a given time.\n- A preimage of a secret code hash is added.\n2) reclaimTransaction ()\nAfter timelock has expired and if the receiver did not withdraw the asset\nthe sender can get their asset back with this function.",
+        "fullyImplemented": true,
+        "id": 337,
+        "linearizedBaseContracts": [
+          337
+        ],
+        "name": "SourceChain",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "constant": false,
+            "id": 88,
+            "name": "token",
+            "nodeType": "VariableDeclaration",
+            "scope": 337,
+            "src": "742:18:2",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_contract$_Token_$518",
+              "typeString": "contract Token"
+            },
+            "typeName": {
+              "contractScope": null,
+              "id": 87,
+              "name": "Token",
+              "nodeType": "UserDefinedTypeName",
+              "referencedDeclaration": 518,
+              "src": "742:5:2",
+              "typeDescriptions": {
+                "typeIdentifier": "t_contract$_Token_$518",
+                "typeString": "contract Token"
+              }
+            },
+            "value": null,
+            "visibility": "public"
+          },
+          {
+            "canonicalName": "SourceChain.LockAssetData",
+            "id": 99,
+            "members": [
+              {
+                "constant": false,
+                "id": 90,
+                "name": "sender",
+                "nodeType": "VariableDeclaration",
+                "scope": 99,
+                "src": "937:14:2",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_address",
+                  "typeString": "address"
+                },
+                "typeName": {
+                  "id": 89,
+                  "name": "address",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "937:7:2",
+                  "stateMutability": "nonpayable",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  }
+>>>>>>> 4e6c441aaca33f01d17ea0f10c7bc98b478e7dad
                 },
                 {
                   "expression": {
@@ -11232,8 +11754,13 @@
                           "name": "c",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
+<<<<<<< HEAD
                           "referencedDeclaration": 361,
                           "src": "6486:1:3",
+=======
+                          "referencedDeclaration": 1043,
+                          "src": "1320:3:2",
+>>>>>>> 4e6c441aaca33f01d17ea0f10c7bc98b478e7dad
                           "typeDescriptions": {
                             "typeIdentifier": "t_struct$_LockContract_$109_storage_ptr",
                             "typeString": "struct SourceChain.LockContract storage pointer"
@@ -11338,9 +11865,18 @@
                       "id": 387,
                       "name": "HTLCERC20Withdraw",
                       "nodeType": "Identifier",
+<<<<<<< HEAD
                       "overloadedDeclarations": [],
                       "referencedDeclaration": 181,
                       "src": "6510:17:3",
+=======
+                      "overloadedDeclarations": [
+                        1044,
+                        1045
+                      ],
+                      "referencedDeclaration": 1045,
+                      "src": "1304:7:2",
+>>>>>>> 4e6c441aaca33f01d17ea0f10c7bc98b478e7dad
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_event_nonpayable$_t_bytes32_$returns$__$",
                         "typeString": "function (bytes32)"
@@ -11875,9 +12411,56 @@
                         "lValueRequested": false,
                         "leftExpression": {
                           "argumentTypes": null,
+<<<<<<< HEAD
                           "expression": {
                             "argumentTypes": null,
                             "baseExpression": {
+=======
+                          "arguments": [
+                            {
+                              "argumentTypes": null,
+                              "expression": {
+                                "argumentTypes": null,
+                                "id": 176,
+                                "name": "msg",
+                                "nodeType": "Identifier",
+                                "overloadedDeclarations": [],
+                                "referencedDeclaration": 1041,
+                                "src": "2511:3:2",
+                                "typeDescriptions": {
+                                  "typeIdentifier": "t_magic_message",
+                                  "typeString": "msg"
+                                }
+                              },
+                              "id": 177,
+                              "isConstant": false,
+                              "isLValue": false,
+                              "isPure": false,
+                              "lValueRequested": false,
+                              "memberName": "sender",
+                              "nodeType": "MemberAccess",
+                              "referencedDeclaration": null,
+                              "src": "2511:10:2",
+                              "typeDescriptions": {
+                                "typeIdentifier": "t_address_payable",
+                                "typeString": "address payable"
+                              }
+                            },
+                            {
+                              "argumentTypes": null,
+                              "id": 178,
+                              "name": "_burnAddress",
+                              "nodeType": "Identifier",
+                              "overloadedDeclarations": [],
+                              "referencedDeclaration": 160,
+                              "src": "2523:12:2",
+                              "typeDescriptions": {
+                                "typeIdentifier": "t_address",
+                                "typeString": "address"
+                              }
+                            },
+                            {
+>>>>>>> 4e6c441aaca33f01d17ea0f10c7bc98b478e7dad
                               "argumentTypes": null,
                               "id": 426,
                               "name": "contracts",
@@ -12067,8 +12650,13 @@
                               "name": "_contractId",
                               "nodeType": "Identifier",
                               "overloadedDeclarations": [],
+<<<<<<< HEAD
                               "referencedDeclaration": 396,
                               "src": "7499:11:3",
+=======
+                              "referencedDeclaration": 1028,
+                              "src": "2493:3:2",
+>>>>>>> 4e6c441aaca33f01d17ea0f10c7bc98b478e7dad
                               "typeDescriptions": {
                                 "typeIdentifier": "t_bytes32",
                                 "typeString": "bytes32"
@@ -12098,6 +12686,7 @@
                             "typeIdentifier": "t_bool",
                             "typeString": "bool"
                           }
+<<<<<<< HEAD
                         },
                         "nodeType": "BinaryOperation",
                         "operator": "==",
@@ -12120,6 +12709,15 @@
                           "value": "false"
                         },
                         "src": "7489:41:3",
+=======
+                        ],
+                        "id": 173,
+                        "name": "sha256",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 1050,
+                        "src": "2486:6:2",
+>>>>>>> 4e6c441aaca33f01d17ea0f10c7bc98b478e7dad
                         "typeDescriptions": {
                           "typeIdentifier": "t_bool",
                           "typeString": "bool"
@@ -12183,9 +12781,78 @@
                       "typeString": "tuple()"
                     }
                   },
+<<<<<<< HEAD
                   "id": 445,
                   "nodeType": "ExpressionStatement",
                   "src": "7467:122:3"
+=======
+                  "falseBody": null,
+                  "id": 193,
+                  "nodeType": "IfStatement",
+                  "src": "2617:69:2",
+                  "trueBody": {
+                    "expression": {
+                      "argumentTypes": null,
+                      "arguments": [
+                        {
+                          "argumentTypes": null,
+                          "hexValue": "5472616e73616374696f6e20616c726561647920657869737473",
+                          "id": 190,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": true,
+                          "kind": "string",
+                          "lValueRequested": false,
+                          "nodeType": "Literal",
+                          "src": "2657:28:2",
+                          "subdenomination": null,
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_stringliteral_edf8b9a1ac089f337d41991ddeecb9ee2df55afa8fe8c96c2831389a7e8aaf55",
+                            "typeString": "literal_string \"Transaction already exists\""
+                          },
+                          "value": "Transaction already exists"
+                        }
+                      ],
+                      "expression": {
+                        "argumentTypes": [
+                          {
+                            "typeIdentifier": "t_stringliteral_edf8b9a1ac089f337d41991ddeecb9ee2df55afa8fe8c96c2831389a7e8aaf55",
+                            "typeString": "literal_string \"Transaction already exists\""
+                          }
+                        ],
+                        "id": 189,
+                        "name": "revert",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [
+                          1046,
+                          1047
+                        ],
+                        "referencedDeclaration": 1047,
+                        "src": "2650:6:2",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_function_revert_pure$_t_string_memory_ptr_$returns$__$",
+                          "typeString": "function (string memory) pure"
+                        }
+                      },
+                      "id": 191,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": false,
+                      "kind": "functionCall",
+                      "lValueRequested": false,
+                      "names": [],
+                      "nodeType": "FunctionCall",
+                      "src": "2650:36:2",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_tuple$__$",
+                        "typeString": "tuple()"
+                      }
+                    },
+                    "id": 192,
+                    "nodeType": "ExpressionStatement",
+                    "src": "2650:36:2"
+                  }
+>>>>>>> 4e6c441aaca33f01d17ea0f10c7bc98b478e7dad
                 },
                 {
                   "expression": {
@@ -12206,6 +12873,7 @@
                           "argumentTypes": null,
                           "expression": {
                             "argumentTypes": null,
+<<<<<<< HEAD
                             "baseExpression": {
                               "argumentTypes": null,
                               "id": 447,
@@ -12239,6 +12907,14 @@
                             "lValueRequested": false,
                             "nodeType": "IndexAccess",
                             "src": "7622:22:3",
+=======
+                            "id": 196,
+                            "name": "msg",
+                            "nodeType": "Identifier",
+                            "overloadedDeclarations": [],
+                            "referencedDeclaration": 1041,
+                            "src": "2750:3:2",
+>>>>>>> 4e6c441aaca33f01d17ea0f10c7bc98b478e7dad
                             "typeDescriptions": {
                               "typeIdentifier": "t_struct$_LockContract_$109_storage",
                               "typeString": "struct SourceChain.LockContract storage ref"
@@ -12309,6 +12985,7 @@
                           "typeString": "literal_string \"withdrawable: timelock time must be in the future\""
                         }
                       ],
+<<<<<<< HEAD
                       "id": 446,
                       "name": "require",
                       "nodeType": "Identifier",
@@ -12318,6 +12995,38 @@
                       ],
                       "referencedDeclaration": 798,
                       "src": "7600:7:3",
+=======
+                      "expression": {
+                        "argumentTypes": [
+                          {
+                            "typeIdentifier": "t_stringliteral_d972a7c972449bdb9cebe63bbe70aabf7c1479cdd3def2eb6af0685384c9067a",
+                            "typeString": "literal_string \"transferFrom sender to this failed\""
+                          }
+                        ],
+                        "id": 202,
+                        "name": "revert",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [
+                          1046,
+                          1047
+                        ],
+                        "referencedDeclaration": 1047,
+                        "src": "2785:6:2",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_function_revert_pure$_t_string_memory_ptr_$returns$__$",
+                          "typeString": "function (string memory) pure"
+                        }
+                      },
+                      "id": 204,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": false,
+                      "kind": "functionCall",
+                      "lValueRequested": false,
+                      "names": [],
+                      "nodeType": "FunctionCall",
+                      "src": "2785:44:2",
+>>>>>>> 4e6c441aaca33f01d17ea0f10c7bc98b478e7dad
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_require_pure$_t_bool_$_t_string_memory_ptr_$returns$__$",
                         "typeString": "function (bool,string memory) pure"
@@ -12460,6 +13169,7 @@
                     "operator": "=",
                     "rightHandSide": {
                       "argumentTypes": null,
+<<<<<<< HEAD
                       "id": 465,
                       "name": "_preimage",
                       "nodeType": "Identifier",
@@ -12491,6 +13201,91 @@
                     "lValueRequested": false,
                     "leftHandSide": {
                       "argumentTypes": null,
+=======
+                      "arguments": [
+                        {
+                          "argumentTypes": null,
+                          "expression": {
+                            "argumentTypes": null,
+                            "id": 216,
+                            "name": "msg",
+                            "nodeType": "Identifier",
+                            "overloadedDeclarations": [],
+                            "referencedDeclaration": 1041,
+                            "src": "2929:3:2",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_magic_message",
+                              "typeString": "msg"
+                            }
+                          },
+                          "id": 217,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": false,
+                          "lValueRequested": false,
+                          "memberName": "sender",
+                          "nodeType": "MemberAccess",
+                          "referencedDeclaration": null,
+                          "src": "2929:10:2",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_address_payable",
+                            "typeString": "address payable"
+                          }
+                        },
+                        {
+                          "argumentTypes": null,
+                          "id": 218,
+                          "name": "_burnAddress",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 160,
+                          "src": "2941:12:2",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_address",
+                            "typeString": "address"
+                          }
+                        },
+                        {
+                          "argumentTypes": null,
+                          "id": 219,
+                          "name": "_asset",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 158,
+                          "src": "2955:6:2",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_uint256",
+                            "typeString": "uint256"
+                          }
+                        },
+                        {
+                          "argumentTypes": null,
+                          "id": 220,
+                          "name": "_secretCode",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 162,
+                          "src": "2963:11:2",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_bytes32",
+                            "typeString": "bytes32"
+                          }
+                        },
+                        {
+                          "argumentTypes": null,
+                          "id": 221,
+                          "name": "_timelock",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 164,
+                          "src": "2976:9:2",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_uint256",
+                            "typeString": "uint256"
+                          }
+                        }
+                      ],
+>>>>>>> 4e6c441aaca33f01d17ea0f10c7bc98b478e7dad
                       "expression": {
                         "argumentTypes": null,
                         "id": 468,
@@ -12560,8 +13355,13 @@
                           "name": "msg",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
+<<<<<<< HEAD
                           "referencedDeclaration": 794,
                           "src": "7921:3:3",
+=======
+                          "referencedDeclaration": 1041,
+                          "src": "3039:3:2",
+>>>>>>> 4e6c441aaca33f01d17ea0f10c7bc98b478e7dad
                           "typeDescriptions": {
                             "typeIdentifier": "t_magic_message",
                             "typeString": "msg"
@@ -13436,8 +14236,13 @@
                       "name": "msg",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
+<<<<<<< HEAD
                       "referencedDeclaration": 794,
                       "src": "9043:3:3",
+=======
+                      "referencedDeclaration": 1041,
+                      "src": "4170:3:2",
+>>>>>>> 4e6c441aaca33f01d17ea0f10c7bc98b478e7dad
                       "typeDescriptions": {
                         "typeIdentifier": "t_magic_message",
                         "typeString": "msg"
@@ -13487,8 +14292,13 @@
                                   "name": "this",
                                   "nodeType": "Identifier",
                                   "overloadedDeclarations": [],
+<<<<<<< HEAD
                                   "referencedDeclaration": 816,
                                   "src": "9147:4:3",
+=======
+                                  "referencedDeclaration": 1061,
+                                  "src": "4266:4:2",
+>>>>>>> 4e6c441aaca33f01d17ea0f10c7bc98b478e7dad
                                   "typeDescriptions": {
                                     "typeIdentifier": "t_contract$_SourceChain_$598",
                                     "typeString": "contract SourceChain"
@@ -13611,11 +14421,19 @@
                       "name": "require",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [
+<<<<<<< HEAD
                         797,
                         798
                       ],
                       "referencedDeclaration": 797,
                       "src": "9115:7:3",
+=======
+                        1044,
+                        1045
+                      ],
+                      "referencedDeclaration": 1044,
+                      "src": "4234:7:2",
+>>>>>>> 4e6c441aaca33f01d17ea0f10c7bc98b478e7dad
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_require_pure$_t_bool_$returns$__$",
                         "typeString": "function (bool) pure"
@@ -13651,8 +14469,13 @@
                           "name": "msg",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
+<<<<<<< HEAD
                           "referencedDeclaration": 794,
                           "src": "9235:3:3",
+=======
+                          "referencedDeclaration": 1041,
+                          "src": "4345:3:2",
+>>>>>>> 4e6c441aaca33f01d17ea0f10c7bc98b478e7dad
                           "typeDescriptions": {
                             "typeIdentifier": "t_magic_message",
                             "typeString": "msg"
@@ -13754,8 +14577,13 @@
                           "name": "msg",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
+<<<<<<< HEAD
                           "referencedDeclaration": 794,
                           "src": "9323:3:3",
+=======
+                          "referencedDeclaration": 1041,
+                          "src": "4425:3:2",
+>>>>>>> 4e6c441aaca33f01d17ea0f10c7bc98b478e7dad
                           "typeDescriptions": {
                             "typeIdentifier": "t_magic_message",
                             "typeString": "msg"
@@ -14585,6 +15413,7 @@
       "address": "0x451c28504f96C177B9705dd2605352e1bED632a6",
       "transactionHash": "0x238177b2c2b7c89495f454a2cdcb4aebc696dde7b84106057c9aab0c97baccb7"
     },
+<<<<<<< HEAD
     "1593673918880": {
       "events": {
         "0xf97bb6718c3bf29e51d27c00a46276abc2cf35c7f1d5a1c71bec2c82421bb830": {
@@ -14601,6 +15430,11 @@
           "type": "event"
         },
         "0xe377b499c44b3f95d3f3c5a895b32e8d6df9c8e4222da9802cfbcf361e6c5fee": {
+=======
+    "1594190610950": {
+      "events": {
+        "0x2e9957a3cd9840c366f2861a9817b1cf1cb886f97a9ccbbda01c1a7889cbc745": {
+>>>>>>> 4e6c441aaca33f01d17ea0f10c7bc98b478e7dad
           "anonymous": false,
           "inputs": [
             {
@@ -14632,12 +15466,15 @@
               "internalType": "uint256",
               "name": "_timelock",
               "type": "uint256"
+<<<<<<< HEAD
             },
             {
               "indexed": false,
               "internalType": "uint256",
               "name": "_assetStatus",
               "type": "uint256"
+=======
+>>>>>>> 4e6c441aaca33f01d17ea0f10c7bc98b478e7dad
             }
           ],
           "name": "event_exitTransaction",
@@ -14670,6 +15507,7 @@
         }
       },
       "links": {},
+<<<<<<< HEAD
       "address": "0xD4d1d67d7ba544Bcba74c268Ac5aa8D0D0d14e49",
       "transactionHash": "0xd0df8e3d8ca7d7aacc896e19dbd57c577e7bbab14c4adc82d8da2bd3f5ab3c73"
     }
@@ -14677,6 +15515,14 @@
   "schemaVersion": "3.2.0",
   "updatedAt": "2020-07-11T11:05:14.265Z",
   "networkType": "ethereum",
+=======
+      "address": "0x8374F97D5760fCeB081B0c9f1aCb3F2508DccF79",
+      "transactionHash": "0xfbfa701d51242241953a0f14dc3f582e9ffc44563f1dd8a42068166a8fa13394"
+    }
+  },
+  "schemaVersion": "3.2.0",
+  "updatedAt": "2020-07-08T07:03:06.186Z",
+>>>>>>> 4e6c441aaca33f01d17ea0f10c7bc98b478e7dad
   "devdoc": {
     "methods": {
       "entryTransaction(bytes32,bytes32)": {
