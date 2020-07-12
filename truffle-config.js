@@ -15,6 +15,7 @@ module.exports = {
           enabled: true, // Default: false
           runs: 200      // Default: 200
         },
+        
         evmVersion: "petersburg" //https://www.youtube.com/watch?v=nqaiSvsXIEk&t=87s&frags=pl%2Cwn time 15:13
       }
     }
