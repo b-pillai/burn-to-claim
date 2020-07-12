@@ -191,9 +191,21 @@ function tokens(n) {
  /*
    * Helper for newContract() calls, does the ERC20 approve before calling
    */
-    const newContract = async ({ timelock = timeLock1Hour, hashlock = newSecretHashPair().hash, } = {}) => {
-    await _token.approve(_sourceChain.address, asset, {from: sender})
-  //  return _sourceChain.exitTransaction(_asset, _burnAddress, _amount, _hashlock, _timelock, {from: sender,})
+    const newContract = async ({
+       timelock = timeLock1Hour,
+        hashlock = newSecretHashPair().hash, 
+      } = {}) => {
+      await _token.approve(
+        _sourceChain.address,
+        asset,
+        { from: sender })
+      return _sourceChain.exitTransaction(
+      asset,
+      burnAddress,
+      asset,
+      hashlock,
+      timelock,
+      {from: sender,})
     }
    // Helper for newContract() when expecting failure
 
