@@ -17,7 +17,7 @@ module.exports = async function(deployer) {
   await deployer.deploy(DestinationChain);
   await deployer.deploy(HashedTimelock);
   await deployer.deploy(HashedTimelockERC20);
-  await deployer.deploy(OZToken);
+  await deployer.deploy(OZToken, 10000);
   
   // Transfer all tokens to source Chain contract (1 million)
   const _sourceChain = await SourceChain.deployed();
