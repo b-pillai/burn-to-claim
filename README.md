@@ -21,7 +21,6 @@ The entry-transaction is in the destination chain and initiated by the recipient
 <li><code>DestinationChain.sol</code> is the main contract of in the destination chain.</li>
 <li><code>ERC20.sol</code> is an interface of the ERC20 standard for Ethereum tokens.</li>
 
-
 ### Token Contract.sol
 This is typical ERC20 token contract. 
 The token contract will transfer ERC20 token to the Source chain contract during the deployment.
