@@ -1,0 +1,60 @@
+{
+  "admin": {
+    "name": "Alice",
+    "type": "account",
+    "address": "0x83f53D5327bdaa0eC946A0d1447EA8B71b680Ca9",
+    "privteKey":"0x0"
+  },  
+  "sender": {
+    "name": "Alice",
+    "type": "account",
+    "address": "0x83f53D5327bdaa0eC946A0d1447EA8B71b680Ca9",
+    "privteKey":"0x0"
+  },
+  "recipient": {
+    "name": "Bob",
+    "role": "recipient",
+    "type": "account",
+    "address": "0xd627a8B6dbEA4C24a2a4D34E367C27E8019533BA",
+    "privteKey":"0x0"
+  },
+  "agent": {
+    "name": "BurnToClaim",
+    "symbol": "BTC",
+    "version": "3",
+    "role": "agent",
+    "type": "contract",
+    "addresses": {
+      "ropsten": "0x5CDE4aa01938Bfda67E972B8a9eCE1aD849Dcc0D",
+      "kovan": "",
+      "rinkeby": "0x81ec8f2e7A0c9D32af3aD9b1654A23EeF609DE14",
+      "ganache": ""
+    },
+    "abi": "",
+    "bytecode": ""
+  },
+  "token": {
+    "name": "BasicToken",
+    "symbol": "BT",
+    "version": "3",
+    "role": "token",
+    "type": "contract",
+    "addresses": {
+      "ropsten": "0x0693A8291edccD6413e2d4C6327FFB5eb41A0259",
+      "kovan": "",
+      "rinkeby": "0x719a47130bBCd41Fcaa8bDddFBc710843aC86FB2",
+      "ganache": ""
+    },
+    "abi": "",
+    "bytecode": ""
+  },
+  "senderNetwork": "rinkeby",
+  "recipientNetwork": "ropsten",
+  "initialBalance": 10000000,
+  "timeoutSeconds": 3600,
+  "tokenAmount": 16,
+  "iterations": 4,
+  "transactionId": "",
+  "deploy": true,
+  "sendLogbookToDb": true
+}
