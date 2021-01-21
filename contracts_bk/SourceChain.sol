@@ -1,6 +1,5 @@
-// contracts/MyNFT.sol
-// SPDX-License-Identifier: MIT
-pragma solidity ^0.6.0;
+pragma solidity >=0.4.22 <0.7.0;
+
 //impiort the token contract
 import "./Token.sol";
 
@@ -85,7 +84,20 @@ contract SourceChain {
         token = _token;
     }
 
-
+    /**
+     * @dev Sender sets up the hash timelock burn contract.
+     *
+     * NOTE: sender must first call the approve() function on the token contract.
+     *
+     * @param _asset asset to be burned.
+     * @param _burnAddress Burn Address.
+     * @param _secretCode A sha-2 sha256 hash hashlock.
+     * @param _timelock UNIX epoch seconds time that the lock expires at.
+     *        Reclaim can be made after this time.
+     *
+     * @return Tx_receipt - Transaction receipt.
+     *
+     */
     function exitTransaction(
         uint256 _asset,
         address _burnAddress,

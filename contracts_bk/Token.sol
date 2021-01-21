@@ -1,6 +1,5 @@
-// contracts/MyNFT.sol
-// SPDX-License-Identifier: MIT
-pragma solidity ^0.6.0;
+pragma solidity >=0.4.21 <0.7.0;
+
 contract Token {
     string  public name = "Griffith Token";
     string  public symbol = "GT";
