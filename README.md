@@ -14,7 +14,6 @@ The entry-transaction is in the destination chain and initiated by the recipient
 <li><code>BurnToClaim.sol</code> is the main contract of the cross-blockchain protocol.</li>
 <li><code>BaseicToken.sol</code> is an interface of the ERC20 standard for Ethereum tokens.</li>
 
-
 ## A high level overview of the Burn-to-Claim protocol workflow
 
 ---![](/images/graphicalAbstract.png?raw=true)
@@ -29,10 +28,6 @@ You need to install the following tools/packages:
 * [Node](https://nodejs.org/en/)
 * [Ganache](https://www.trufflesuite.com/ganache) 
 * [Tuffle](https://www.trufflesuite.com) 
-
-
-# burn-to-claim
-Demo of [burn-to-claim cross blockchain asset transfer protocol](https://zhehou.github.io/papers/burn_to_claim_cross_blockchain_asset_transfer_protocol.pdf)
 
 ## Required Accounts
 - [infura.io](https://infura.io/)
