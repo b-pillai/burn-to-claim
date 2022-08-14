@@ -27,7 +27,7 @@
   },
   "homepage": "https://github.com/b-pillai/burn-to-claim#readme",
   "dependencies": {
-    "@openzeppelin/contracts": "^3.1.0",
+    "@openzeppelin/contracts": "^4.7.2",
     "chai": "^4.2.0",
     "cookie-parser": "~1.4.4",
     "crypto": "^1.0.1",
