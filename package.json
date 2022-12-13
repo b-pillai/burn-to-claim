@@ -37,7 +37,7 @@
     "ejs": "~2.6.1",
     "ethereum-waffle": "^3.0.2",
     "ethers": "4.0.47",
-    "express": "~4.16.1",
+    "express": "~4.17.3",
     "fs-extra": "^9.0.1",
     "http-errors": "~1.6.3",
     "mocha": "^7.1.2",
